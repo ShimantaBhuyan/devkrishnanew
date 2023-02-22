@@ -38,11 +38,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
         />
       </Head>
       {/* <Navbar /> */}
-      <main
-        className={
-          "bg-[url('/assets/bgImage.webp')] bg-cover bg-right-bottom h-[100vh] w-[100vw] flex flex-col justify-center items-center p-5"
-        }
-      >
+      <main className={"flex flex-col justify-center items-center box-border overflow-x-hidden overscroll-none"}>
         {children}
       </main>
       {/* <Footer /> */}
