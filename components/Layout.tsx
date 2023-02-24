@@ -1,7 +1,7 @@
 import React from "react";
 // import Navbar from "./Navbar";
-// import { Footer } from "./Footer";
 import Head from "next/head";
+import { Footer } from "./Footer";
 // import styles from "../styles/Home.module.css";
 
 export default function Layout({ children }: { children: React.ReactElement }) {
@@ -41,7 +41,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
       <main className={"flex flex-col justify-center items-center box-border overflow-x-hidden overscroll-none"}>
         {children}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

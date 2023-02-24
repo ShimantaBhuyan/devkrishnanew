@@ -5,22 +5,23 @@ const classes = {
   black: "logoFont text-4xl text-black",
 };
 
-export const LogoSVG = ({ color }: { color: "white" | "black" }) => {
+export const LogoSVG = ({ color, noLogo }: { color: "white" | "black"; noLogo?: boolean }) => {
   const classNames = classes[color];
   return (
     <div className={`group flex justify-center items-center p-2 sm:gap-2 h-[150px]`}>
-      <svg
-        version="1.0"
-        xmlns="http://www.w3.org/2000/svg"
-        width="0"
-        height="100%"
-        viewBox="0 0 120.000000 110.000000"
-        preserveAspectRatio="xMidYMid meet"
-        className="w-0 group-hover:w-[100%] transition-all duration-700 ease-in-out"
-      >
-        <g transform="translate(0.000000,110.000000) scale(0.100000,-0.100000)" fill={color} stroke={color}>
-          <path
-            d="M531 912 c-67 -10 -103 -75 -100 -179 1 -38 -3 -69 -9 -75 -7 -7 -12
+      {noLogo == undefined || noLogo == false ? (
+        <svg
+          version="1.0"
+          xmlns="http://www.w3.org/2000/svg"
+          width="0"
+          height="100%"
+          viewBox="0 0 120.000000 110.000000"
+          preserveAspectRatio="xMidYMid meet"
+          className="w-0 [@media(hover:hover)]:group-hover:w-[100%] transition-all duration-700 ease-in-out"
+        >
+          <g transform="translate(0.000000,110.000000) scale(0.100000,-0.100000)" fill={color} stroke={color}>
+            <path
+              d="M531 912 c-67 -10 -103 -75 -100 -179 1 -38 -3 -69 -9 -75 -7 -7 -12
 -29 -12 -50 0 -32 -5 -40 -31 -53 -35 -19 -59 -67 -59 -120 l0 -35 -70 0 -70
 0 0 -29 c0 -16 7 -64 15 -107 8 -44 16 -90 18 -104 l4 -25 330 -3 c285 -2 332
 0 343 13 20 25 -5 45 -56 45 -42 0 -44 1 -44 30 l0 30 93 0 c137 0 131 -9 135
@@ -43,20 +44,21 @@ export const LogoSVG = ({ color }: { color: "white" | "black" }) => {
 174 -1 22 1 23 82 20 l82 -3 17 -85z m-67 -62 c-10 -80 -14 -88 -42 -88 -26 0
 -26 0 -19 62 6 62 16 78 49 78 17 0 18 -6 12 -52z m580 -78 c-4 -6 -73 -10
 -176 -10 -106 0 -169 4 -169 10 0 6 65 10 176 10 114 0 173 -3 169 -10z"
-            className="svg-elem-1"
-          ></path>
-          <path
-            d="M495 750 c-3 -5 -1 -10 4 -10 6 0 11 5 11 10 0 6 -2 10 -4 10 -3 0
+              className="svg-elem-1"
+            ></path>
+            <path
+              d="M495 750 c-3 -5 -1 -10 4 -10 6 0 11 5 11 10 0 6 -2 10 -4 10 -3 0
 -8 -4 -11 -10z"
-            className="svg-elem-2"
-          ></path>
-          <path
-            d="M595 750 c-3 -5 -1 -10 4 -10 6 0 11 5 11 10 0 6 -2 10 -4 10 -3 0
+              className="svg-elem-2"
+            ></path>
+            <path
+              d="M595 750 c-3 -5 -1 -10 4 -10 6 0 11 5 11 10 0 6 -2 10 -4 10 -3 0
 -8 -4 -11 -10z"
-            className="svg-elem-3"
-          ></path>
-        </g>
-      </svg>
+              className="svg-elem-3"
+            ></path>
+          </g>
+        </svg>
+      ) : null}
       <p className={`glowText ${classNames}`}>DevKrishna</p>
     </div>
   );

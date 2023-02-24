@@ -1,15 +1,17 @@
+import { CaretDoubleDown } from "phosphor-react";
 import { LogoSVG } from "./LogoSVG";
 
 export const Loader = () => {
   return (
-    <div className="flex flex-col justify-center items-center bg-[url('/assets/bgImage.webp')] h-[100vh] w-[100vw] bg-cover bg-right-bottom ">
-      <LogoSVG color="white" />
-      <h1 className="text-4xl sm:text-7xl sm:w-[75%] text-center text-white">
+    <div className="flex flex-col justify-center items-center bg-[url('/assets/bg.png')] h-[100vh] w-[100vw] bg-cover bg-bottom ">
+      <LogoSVG color="black" />
+      <h1 className="text-4xl sm:text-7xl sm:w-[75%] text-center font-medium bg-clip-text text-transparent bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600">
         welcome to my space in the <br />
-        <span className="text-4xl sm:text-7xl sm:w-[75%] text-center font-medium bg-clip-text text-transparent bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-amber-700 via-orange-300 to-rose-800">
+        <span className="text-4xl sm:text-7xl sm:w-[75%] text-center font-medium bg-clip-text text-transparent bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600">
           world wide web
         </span>
       </h1>
+      <CaretDoubleDown size={32} className="animate-bounce w-8 h-8 mt-20 text-white" />
     </div>
   );
 };

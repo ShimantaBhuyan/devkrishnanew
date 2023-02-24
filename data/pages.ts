@@ -1,23 +1,9 @@
 export const pages = {
-  myspace: {
-    id: 0,
-    to: "/space/myspace",
-    img: "/assets/base-image.png",
-    placeholder: "/assets/blurred/base-image.png",
-    title: "My World Wide Web",
-    description:
-      "This is my space in the World Wide Web. It is a place where I share my knowledge and experiences. I love to learn new things and share them with others.",
-    //   link: "https://unsplash.com/photos/aBJBMYwzEd8",
-    //   author: "Photo by Paul Rysz",
-    //   location: "Aberdeen, United Kingdom",
-    //   date: "Published on May 19, 2018",
-    width: "512",
-    height: "768",
-  },
   work: {
-    id: 1,
+    id: 0,
     to: "/space/work",
     img: "/assets/work-image.png",
+    superImg: "https://ik.imagekit.io/colorContrast/devkrishna-super-images/work-image_pznSct7btH.png",
     placeholder: "/assets/blurred/work-image.png",
     title: "Work",
     description:
@@ -30,9 +16,10 @@ export const pages = {
     height: "768",
   },
   random: {
-    id: 2,
+    id: 1,
     to: "/space/random",
     img: "/assets/chill-image.png",
+    superImg: "https://ik.imagekit.io/colorContrast/devkrishna-super-images/chill-image_0gew3YuAH4.png",
     placeholder: "/assets/blurred/chill-image.png",
     title: "#Random",
     description:
@@ -44,19 +31,15 @@ export const pages = {
     width: "512",
     height: "768",
   },
-  contact: {
-    id: 3,
-    to: "/space/contact",
-    img: "/assets/contact-image.png",
-    placeholder: "/assets/blurred/contact-image.png",
-    title: "Contact me",
-    description: "I am active on these social media platforms. Contact me for brainstorming, collab, or anything else.",
-    meta: {
-      twitter: "https://twitter.com/AllDevThings",
-      github: "https://github.com/ShimantaBhuyan",
-      linkedin: "https://www.linkedin.com/in/shimantabhuyan",
-      pinterest: "https://in.pinterest.com/shimantabhuyan/",
-    },
+  myspace: {
+    id: 2,
+    to: "/space/myspace",
+    img: "/assets/base-image.png",
+    superImg: "https://ik.imagekit.io/colorContrast/devkrishna-super-images/base-image_2i3gTHgBS.png",
+    placeholder: "/assets/blurred/base-image.png",
+    title: "About me",
+    description:
+      "I am Shimanta and this is my space in the World Wide Web. It is a place where I share my knowledge and experiences. I love to learn new things and share them with others.",
     //   link: "https://unsplash.com/photos/aBJBMYwzEd8",
     //   author: "Photo by Paul Rysz",
     //   location: "Aberdeen, United Kingdom",
@@ -65,13 +48,38 @@ export const pages = {
     height: "768",
   },
   "for-chronicle": {
-    id: 4,
+    id: 3,
     to: "/space/for-chronicle",
     img: "/assets/chronicle-image.png",
+    superImg: "https://ik.imagekit.io/colorContrast/devkrishna-super-images/chronicle-image_IsKeNiEUw.png",
     placeholder: "/assets/blurred/chronicle-image.png",
     title: "For Chronicle",
     description:
       "I found out about Chronicle on Twitter and upon checking out their site, became absolutely intrigued by the product and the company. This is my way to get their attention and hopefully a role to build the product!",
+    //   link: "https://unsplash.com/photos/aBJBMYwzEd8",
+    //   author: "Photo by Paul Rysz",
+    //   location: "Aberdeen, United Kingdom",
+    //   date: "Published on May 19, 2018",
+    width: "512",
+    height: "768",
+  },
+  contact: {
+    id: 4,
+    to: "/space/contact",
+    img: "/assets/contact-image.png",
+    superImg: "https://ik.imagekit.io/colorContrast/devkrishna-super-images/contact-image_CkCSY0m80V.png",
+    placeholder: "/assets/blurred/contact-image.png",
+    title: "Contact me",
+    description: "I am active on these social media platforms. Contact me for brainstorming, collab, or anything else.",
+    meta: {
+      socials: {
+        twitter: "https://twitter.com/AllDevThings",
+        github: "https://github.com/ShimantaBhuyan",
+        email: "mailto:shimantakb@gmail.com",
+        linkedin: "https://www.linkedin.com/in/shimantabhuyan",
+        pinterest: "https://in.pinterest.com/shimantabhuyan/",
+      },
+    },
     //   link: "https://unsplash.com/photos/aBJBMYwzEd8",
     //   author: "Photo by Paul Rysz",
     //   location: "Aberdeen, United Kingdom",
@@ -125,6 +133,7 @@ export type PAGE_TYPE = {
   id: number;
   to: string;
   img: string;
+  superImg: string;
   placeholder: string;
   title: string;
   description: string;
@@ -135,4 +144,5 @@ export type PAGE_TYPE = {
   date?: string;
   width: string;
   height: string;
+  hidden?: boolean;
 };

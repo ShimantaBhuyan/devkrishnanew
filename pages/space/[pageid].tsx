@@ -3,10 +3,12 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { pages, PAGE_TYPE } from "../../data/pages";
-import { motion } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
 import { ArrowLeft } from "phosphor-react";
 import { InferGetStaticPropsType } from "next/types";
 import { GetStaticProps, GetStaticPaths } from "next/types";
+import { Socials } from "../../components/Socials";
+import { Work } from "../../components/Work";
 
 export async function getStaticPaths() {
   return {
@@ -21,12 +23,13 @@ export const getStaticProps: GetStaticProps = async context => {
   const page = pages[pageid as keyof typeof pages];
   return {
     props: {
+      pageid,
       page,
     },
   };
 };
 
-const PageDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ page }) => {
+const PageDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ page, pageid }) => {
   useEffect(() => {
     // scroll to top on load
     if (window != undefined) window.scrollTo(0, 0);
@@ -37,10 +40,19 @@ const PageDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ 
     return null;
   }
 
+  const getMetaComponent = () => {
+    if (pageid === "contact") {
+      return <Socials socials={page.meta.socials} />;
+    } else if (pageid === "work") {
+      return <Work />;
+    }
+    return null;
+  };
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-[1.5fr,1fr] min-h-screen w-[100%]">
-      <div className="p-10">
-        <div className="sticky top-10">
+    <div className="grid grid-cols-1 min-h-screen w-[100%] p-10">
+      <div className="sticky top-10">
+        <MotionConfig>
           <motion.div
             className="flex justify-between mb-8"
             initial={{ x: 100, opacity: 0 }}
@@ -76,6 +88,18 @@ const PageDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ 
           >
             {page.title}
           </motion.h2>
+          <Image
+            src={page.superImg}
+            alt={page.title}
+            placeholder="blur"
+            blurDataURL={page.placeholder}
+            width={parseInt(page.width)}
+            height={parseInt(page.height)}
+            style={{
+              objectFit: "cover",
+            }}
+            className="rounded-lg flex sm:hidden mt-4"
+          />
           {/* <motion.div
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -101,26 +125,14 @@ const PageDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ 
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{
-              delay: 0.8,
+              delay: 0.5,
             }}
             className="mt-5 text-md text-gray-500 space-y-5"
           >
             {page.description}
+            {getMetaComponent()}
           </motion.div>
-        </div>
-      </div>
-      <div className="overflow-hidden flex justify-center">
-        <Image
-          src={page.img}
-          alt={page.title}
-          placeholder="blur"
-          blurDataURL={page.placeholder}
-          width={parseInt(page.width)}
-          height={parseInt(page.height)}
-          style={{
-            objectFit: "cover",
-          }}
-        />
+        </MotionConfig>
       </div>
     </div>
   );

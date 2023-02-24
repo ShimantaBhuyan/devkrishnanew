@@ -14,11 +14,16 @@
 
 .footer {
   display: flex;
+  width: 100%;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  /* background: linear-gradient(to top, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0)); */
+  background-color: rgb(31 41 55);
 }
 
 .footer a {
