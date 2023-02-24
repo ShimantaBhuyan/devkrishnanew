@@ -19,14 +19,14 @@ export const Work = () => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </span>
               <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">
-                Founder - &nbsp; <Link href={"www.assetsai.art"}>AssetsAI</Link>{" "}
+                Founder - &nbsp; <Link href="https://www.assetsai.art">AssetsAI</Link>{" "}
                 {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
               Latest
             </span> */}
@@ -48,14 +48,14 @@ export const Work = () => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </span>
               <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">
-                Founder - &nbsp; <Link href={"www.strategyqr.com"}>StrategyQR</Link>{" "}
+                Founder - &nbsp; <Link href="https://www.strategyqr.com">StrategyQR</Link>{" "}
                 {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
               Latest
             </span> */}
@@ -77,9 +77,9 @@ export const Work = () => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </span>
@@ -110,9 +110,9 @@ export const Work = () => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </span>
@@ -152,9 +152,9 @@ export const Work = () => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </span>
@@ -178,7 +178,7 @@ export const Work = () => {
             </li>
           </ol>
         </div>
-        <div className="overflow-hidden hidden w-[60%] sm:flex justify-center max-h-[100vh]">
+        {/* <div className="overflow-hidden hidden w-[60%] sm:flex justify-center max-h-[100vh]">
           <Image
             src={pages.work.superImg}
             alt={pages.work.title}
@@ -191,11 +191,11 @@ export const Work = () => {
             }}
             className="rounded-lg"
           />
-        </div>
+        </div> */}
       </div>
-      <div className="grid grid-cols-3 w-[100%]">
+      {/* <div className="grid grid-cols-3 w-[100%]">
         <h2>Projects</h2>
-      </div>
+      </div> */}
     </div>
   );
 };

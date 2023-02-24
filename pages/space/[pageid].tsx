@@ -9,6 +9,9 @@ import { InferGetStaticPropsType } from "next/types";
 import { GetStaticProps, GetStaticPaths } from "next/types";
 import { Socials } from "../../components/Socials";
 import { Work } from "../../components/Work";
+import { Random } from "../../components/Random";
+import { About } from "../../components/About";
+import { Chronicle } from "../../components/Chronicle";
 
 export async function getStaticPaths() {
   return {
@@ -45,12 +48,18 @@ const PageDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ 
       return <Socials socials={page.meta.socials} />;
     } else if (pageid === "work") {
       return <Work />;
+    } else if (pageid === "random") {
+      return <Random />;
+    } else if (pageid === "for-chronicle") {
+      return <Chronicle />;
+    } else if (pageid === "myspace") {
+      return <About />;
     }
     return null;
   };
 
   return (
-    <div className="grid grid-cols-1 min-h-screen w-[100%] p-10">
+    <div className="grid grid-cols-1 min-h-screen w-[100%] sm:w-[75%] p-10">
       <div className="sticky top-10">
         <MotionConfig>
           <motion.div
@@ -127,7 +136,7 @@ const PageDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ 
             transition={{
               delay: 0.5,
             }}
-            className="mt-5 text-md text-gray-500 space-y-5"
+            className="mt-5 text-md text-gray-600 space-y-5"
           >
             {page.description}
             {getMetaComponent()}

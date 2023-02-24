@@ -40,82 +40,80 @@ const listItem = {
 
 export const Socials = ({ socials, title }: SOCIALS_TYPE) => {
   return (
-    <div className="flex justify-center w-[100%] p-4 pt-10 sm:p-10">
+    <div className="flex flex-col sm:flex-row justify-center w-[100%] p-4 pt-10 sm:p-10">
+      {title != undefined ? (
+        <h2 className="text-xl sm:text-4xl font-bold tracking-tight text-center mb-2 w-[100%]">{title}</h2>
+      ) : null}
       <motion.ul
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex flex-col sm:flex-row justify-between w-[100%]"
+        className="flex justify-between items-center w-[100%]"
         // initial={{ x: 100, opacity: 0 }}
         // animate={{ x: 0, opacity: 1 }}
         transition={{
           staggerChildren: 0.4,
         }}
       >
-        {title != undefined ? (
-          <h2 className="text-lg sm:text-4xl font-bold tracking-tight text-center mb-2 w-[100%]">{title}</h2>
-        ) : null}
-        <div className="flex justify-between items-center w-[100%]">
-          {Object.keys(socials).map((social: string, i: number) => {
-            switch (social) {
-              case "twitter":
-                return (
-                  <motion.li key={i} variants={listItem} className="group">
-                    <Link href={socials[social]}>
-                      <TwitterLogo
-                        size={32}
-                        className="text-[#1DA1F2] group-hover:scale-110 transition-all ease-in-out duration-150"
-                      />
-                    </Link>
-                  </motion.li>
-                );
-              case "github":
-                return (
-                  <motion.li key={i} variants={listItem} className="group">
-                    <Link href={socials[social]}>
-                      <GithubLogo
-                        size={32}
-                        className="text-[#171515] group-hover:scale-110 transition-all ease-in-out duration-150"
-                      />
-                    </Link>
-                  </motion.li>
-                );
-              case "linkedin":
-                return (
-                  <motion.li key={i} variants={listItem} className="group">
-                    <Link href={socials[social]}>
-                      <LinkedinLogo
-                        size={32}
-                        className="text-[#0077b5] group-hover:scale-110 transition-all ease-in-out duration-150"
-                      />
-                    </Link>
-                  </motion.li>
-                );
-              case "pinterest":
-                return (
-                  <motion.li key={i} variants={listItem} className="group">
-                    <Link href={socials[social]}>
-                      <PinterestLogo
-                        size={32}
-                        className="text-[#c8232c] group-hover:scale-110 transition-all ease-in-out duration-150"
-                      />
-                    </Link>
-                  </motion.li>
-                );
-              case "email":
-                return (
-                  <motion.li key={i} variants={listItem} className="group">
-                    <Link href={socials[social]}>
-                      <Envelope
-                        size={32}
-                        className="text-[#c93139] group-hover:scale-110 transition-all ease-in-out duration-150"
-                      />
-                    </Link>
-                  </motion.li>
-                );
-            }
-          })}
-        </div>
+        {Object.keys(socials).map((social: string, i: number) => {
+          switch (social) {
+            case "twitter":
+              return (
+                <motion.li key={i} variants={listItem} className="group">
+                  <Link href={socials[social]}>
+                    <TwitterLogo
+                      size={32}
+                      className="text-[#1DA1F2] group-hover:scale-110 transition-all ease-in-out duration-150"
+                    />
+                  </Link>
+                </motion.li>
+              );
+            case "github":
+              return (
+                <motion.li key={i} variants={listItem} className="group">
+                  <Link href={socials[social]}>
+                    <GithubLogo
+                      size={32}
+                      className="text-[#171515] group-hover:scale-110 transition-all ease-in-out duration-150"
+                    />
+                  </Link>
+                </motion.li>
+              );
+            case "linkedin":
+              return (
+                <motion.li key={i} variants={listItem} className="group">
+                  <Link href={socials[social]}>
+                    <LinkedinLogo
+                      size={32}
+                      className="text-[#0077b5] group-hover:scale-110 transition-all ease-in-out duration-150"
+                    />
+                  </Link>
+                </motion.li>
+              );
+            case "pinterest":
+              return (
+                <motion.li key={i} variants={listItem} className="group">
+                  <Link href={socials[social]}>
+                    <PinterestLogo
+                      size={32}
+                      className="text-[#c8232c] group-hover:scale-110 transition-all ease-in-out duration-150"
+                    />
+                  </Link>
+                </motion.li>
+              );
+            case "email":
+              return (
+                <motion.li key={i} variants={listItem} className="group">
+                  <Link href={socials[social]}>
+                    <Envelope
+                      size={32}
+                      className="text-[#c93139] group-hover:scale-110 transition-all ease-in-out duration-150"
+                    />
+                  </Link>
+                </motion.li>
+              );
+          }
+        })}
       </motion.ul>
     </div>
   );

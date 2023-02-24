@@ -29,7 +29,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
         <meta name="og:image:width" content="410" />
         <meta name="og:image:height" content="436" />
 
-        <link rel="icon" href="/icon.ico" />
+        <link rel="icon" href="/assets/icon.ico" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" crossOrigin="anonymous" />
         <link
           href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap"
