@@ -25,7 +25,7 @@ export type SOCIALS_TYPE = {
 
 const container = {
   hidden: { x: 100 },
-  show: {
+  visible: {
     x: 0,
     transition: {
       staggerChildren: 0.4,
@@ -35,7 +35,7 @@ const container = {
 
 const listItem = {
   hidden: { opacity: 0 },
-  show: { opacity: 1 },
+  visible: { opacity: 1 },
 };
 
 export const Socials = ({ socials, title }: SOCIALS_TYPE) => {
@@ -46,11 +46,10 @@ export const Socials = ({ socials, title }: SOCIALS_TYPE) => {
       ) : null}
       <motion.ul
         variants={container}
+        whileInView="visible"
+        viewport={{ once: true }}
         initial="hidden"
-        animate="show"
         className="flex justify-between items-center w-[100%]"
-        // initial={{ x: 100, opacity: 0 }}
-        // animate={{ x: 0, opacity: 1 }}
         transition={{
           staggerChildren: 0.4,
         }}

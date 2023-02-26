@@ -22,12 +22,12 @@ export const Spaces = () => {
         </div>
       </div>
       {Object.values(pages).map((page: PAGE_TYPE) => {
-        return page.id !== 4 ? (
+        return page.id !== 5 ? (
           <Link
             href={page.to}
             scroll={false}
             key={page.id}
-            className="overflow-hidden flex flex-col rounded-lg shadow-[5px_5px_0px_0px_rgba(109,40,217)] hover:scale-105 hover:shadow-[10px_10px_0px_0px_rgba(109,40,217)] hover:z-10 transition-all ease-in-out relative duration-300 "
+            className="overflow-hidden flex flex-col rounded-lg shadow-[5px_5px_0px_0px_rgba(109,40,217)] sm:hover:scale-105 sm:hover:shadow-[10px_10px_0px_0px_rgba(109,40,217)] sm:hover:z-10 transition-all ease-in-out relative duration-300 relative"
           >
             <Image
               src={page.superImg}
@@ -43,8 +43,8 @@ export const Spaces = () => {
               }}
               // className="group-hover:opacity-30"
             />
-            <div className="flex flex-col justify-center items-center bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-amber-900 to-yellow-300 p-5">
-              <h2 className="text-2xl text-white font-semibold">{page.title}</h2>
+            <div className="flex flex-col justify-center items-center backdrop-blur-sm bg-white/30 p-5 absolute bottom-0 left-0 rounded-b-lg w-[100%]">
+              <h2 className="text-2xl text-black font-semibold">{page.title}</h2>
             </div>
           </Link>
         ) : null;
