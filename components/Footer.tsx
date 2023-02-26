@@ -9,7 +9,7 @@ export const Footer = () => {
     <footer className="flex flex-col w-[100%] justify-center items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] pt-4 pb-8 sm:pb-4 sm:px-10">
       <div className="flex justify-center items-center">
         <div className="max-w-[178px] max-h-[250px]">
-          <Image src="/assets/avatar.png" alt="avatar image" width={178.125} height={250} className="object-cover" />
+          <Image src="/assets/avatar.png" alt="avatar image" width={178} height={250} className="object-cover" />
         </div>
         {/* <h2 className="flex flex-col sm:flex-row text-black uppercase font-medium">
           Made with ☕ by &nbsp;
@@ -22,7 +22,7 @@ export const Footer = () => {
             Shimanta
           </a>
         </h2> */}
-        <Socials socials={pages.contact.meta.socials} title="Connect with me on: " />
+        <Socials socials={pages.contact.meta.socials} />
         <div className="hidden sm:block">
           <LogoSVG color="black" key={"footer-logo"} noLogo={true} />
         </div>

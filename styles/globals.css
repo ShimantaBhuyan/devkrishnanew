@@ -8,6 +8,7 @@ body {
   margin: 0;
   font-family: Inter "sans-serif";
   background-color: rgb(240, 240, 240);
+  overflow-x: hidden;
 }
 
 a {

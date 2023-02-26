@@ -13,7 +13,6 @@ socials: {
 */
 
 export type SOCIALS_TYPE = {
-  title?: string;
   socials: {
     twitter: string;
     github: string;
@@ -38,18 +37,16 @@ const listItem = {
   visible: { opacity: 1 },
 };
 
-export const Socials = ({ socials, title }: SOCIALS_TYPE) => {
+export const Socials = ({ socials }: SOCIALS_TYPE) => {
   return (
     <div className="flex flex-col sm:flex-row justify-center w-[100%] p-4 pt-10 sm:p-10">
-      {title != undefined ? (
-        <h2 className="text-xl sm:text-4xl font-bold tracking-tight text-center mb-2 w-[100%]">{title}</h2>
-      ) : null}
+      <h2 className="text-xl sm:text-4xl font-bold tracking-tight text-center mb-2 w-[100%]">Connect with me on: </h2>
       <motion.ul
         variants={container}
         whileInView="visible"
         viewport={{ once: true }}
         initial="hidden"
-        className="flex justify-between items-center w-[100%]"
+        className="flex justify-between items-center w-[100%] max-w-[283px]"
         transition={{
           staggerChildren: 0.4,
         }}

@@ -20,7 +20,7 @@ export const Loader = () => {
             className="object-cover rounded-full shadow-[rgba(0,_0,_0,_0.2)_0px_60px_40px_-7px]"
           />
         </div>
-        <div className="flex flex-col justify-center items-center w-[100%]">
+        <div className="flex flex-col justify-center items-center w-[100%] px-4">
           <h1 className="text-4xl sm:text-5xl sm:w-[100%] text-center sm:text-start font-medium bg-clip-text text-transparent bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600">
             i&apos;m Shimanta <br /> welcome to my space in the <br />
             <span className="text-4xl sm:text-5xl sm:w-[100%] text-center font-medium bg-clip-text text-transparent bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600">
