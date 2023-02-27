@@ -200,3 +200,12 @@ svg.active .svg-elem-3 {
     inset: 0.4px;
   }
 }
+
+@media screen and (min-width: 1500px) {
+  .tile:before {
+    inset: 1.4px;
+  }
+  .tile:hover:before {
+    inset: 1.4px;
+  }
+}
