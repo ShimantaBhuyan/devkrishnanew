@@ -1,8 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { pages } from "../data/pages";
+import { Project } from "./Project";
+import { useState } from "react";
+import { SquaresFour, Stack } from "phosphor-react";
 
 export const Work = () => {
+  const [projectView, setProjectView] = useState<"grid" | "stack">("stack");
   return (
     <div className="flex flex-col items-center w-[100%] gap-10">
       <div className="flex flex-col justify-center gap-5 my-5">
@@ -198,7 +202,25 @@ export const Work = () => {
       <h2 className="text-lg text-black">
         These are some of my most coveted projects and which I&apos;ve loved spending my time building!
       </h2>
-      <div className="grid grid-cols-3 w-[100%]"></div>
+      {/* <div className="grid grid-cols-3 w-[100%]"> */}
+      <div className="flex justify-between items-center p-5 w-fit gap-20">
+        <Stack
+          size={30}
+          className={`${
+            projectView === "stack" ? "text-purple-600 font-semibold scale-125" : ""
+          } sm:hover:scale-125 transition-all ease-in-out duration-150 cursor-pointer`}
+          onClick={() => setProjectView("stack")}
+        />
+        <SquaresFour
+          size={30}
+          className={`${
+            projectView === "grid" ? "text-purple-600 font-semibold scale-125" : ""
+          } sm:hover:scale-125 transition-all ease-in-out duration-150 cursor-pointer`}
+          onClick={() => setProjectView("grid")}
+        />
+      </div>
+      <Project projectView={projectView} />
+      {/* </div> */}
     </div>
   );
 };

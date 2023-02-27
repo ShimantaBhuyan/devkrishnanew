@@ -28,6 +28,7 @@ const container = {
     x: 0,
     transition: {
       staggerChildren: 0.4,
+      delayChildren: 0.5,
     },
   },
 };
@@ -47,9 +48,9 @@ export const Socials = ({ socials }: SOCIALS_TYPE) => {
         viewport={{ once: true }}
         initial="hidden"
         className="flex justify-between items-center w-[100%] max-w-[283px]"
-        transition={{
-          staggerChildren: 0.4,
-        }}
+        // transition={{
+        //   staggerChildren: 0.4,
+        // }}
       >
         {Object.keys(socials).map((social: string, i: number) => {
           switch (social) {
