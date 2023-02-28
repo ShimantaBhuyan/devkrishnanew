@@ -8,6 +8,7 @@ import { InferGetStaticPropsType } from "next/types";
 import { GetStaticProps, GetStaticPaths } from "next/types";
 import { remark } from "remark";
 import html from "remark-html";
+import Link from "next/link";
 
 export async function getStaticPaths() {
   return {
@@ -28,12 +29,13 @@ export const getStaticProps: GetStaticProps = async context => {
     props: {
       title: page?.title,
       img: page?.img,
+      link: page?.link,
       contentHtml,
     },
   };
 };
 
-const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ title, img, contentHtml }) => {
+const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ title, link, img, contentHtml }) => {
   const router = useRouter();
   useEffect(() => {
     // scroll to top on load
@@ -86,18 +88,21 @@ const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = 
           >
             {title}
           </motion.h2>
-          <Image
-            src={img}
-            alt={title}
-            //   placeholder="blur"
-            //   blurDataURL={page.placeholder}
-            width={300}
-            height={300}
-            style={{
-              objectFit: "contain",
-            }}
-            className="rounded-lg flex mt-4 self-center"
-          />
+          <Link href={link} className="self-center">
+            <Image
+              src={img}
+              alt={title}
+              //   placeholder="blur"
+              //   blurDataURL={page.placeholder}
+              width={300}
+              height={300}
+              style={{
+                objectFit: "contain",
+              }}
+              className="rounded-lg flex mt-4 bg-purple-500/30 shadow-2xl p-4"
+            />
+          </Link>
+
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -107,6 +112,19 @@ const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = 
             className="mt-5 text-md text-gray-600 space-y-5"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           ></motion.div>
+          <motion.h2
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.5,
+            }}
+            className="text-lg text-gray-800 self-center"
+          >
+            You can check out the project{" "}
+            <Link href={link} className="font-semibold underline">
+              here
+            </Link>
+          </motion.h2>
         </div>
       </MotionConfig>
       {/* </div> */}

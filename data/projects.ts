@@ -31,7 +31,7 @@ export const projects = {
     id: "contrast-analyser",
     to: "/projects/contrast-analyser",
     link: "https://color-contrast.dev",
-    img: "https://ik.imagekit.io/colorContrast/android-chrome-512x512_ztriXnxDj.png",
+    img: "/assets/color-contrast.png",
     title: "Color Contrast Analyser",
     subheading: "A tool that analyzes the color contrast of website foreground and background",
     description: `This is a tool that analyses the color contrast of a foreground and background color that you use in a website or in general, in a digital medium.  \n\nThe current WCAG 2.1 guidelines regarding color contrast are broken in the sense that they are mathematical in nature and do not completely take into picture human perception. All humans perceive colors differently, and some folks with problems like color blindness have difficulty detecting some colors as well. \n\nThe candidate WCAG 3 algorithm for color contrast, APCA. Accessible Perceptual Contrast Algorithm (APCA) is a contrast assessment method for predicting the perceived contrast between sRGB colors on a computer monitor. It has been developed as an assessment method for W3 Silver/WCAG3 accessibility standards relating to content for computer displays and mobile devices, with a focus on readability and understandability. It is based on human perception of colors and backwards compatible with WCAG 2.1`,

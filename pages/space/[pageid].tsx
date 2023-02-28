@@ -34,10 +34,10 @@ export const getStaticProps: GetStaticProps = async context => {
 };
 
 const PageDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ page, pageid }) => {
-  // useEffect(() => {
-  //   // scroll to top on load
-  //   if (window != undefined) window.scrollTo(0, 0);
-  // }, []);
+  useEffect(() => {
+    // scroll to top on load
+    if (window != undefined) window.scrollTo(0, 0);
+  }, []);
 
   if (!page) {
     // TODO: Return 404 page
