@@ -14,20 +14,20 @@ export default function Layout({ children }: { children: React.ReactElement }) {
         <meta name="og:type" content="website" />
         <meta name="og:title" content="DevKrishna | Personal Website" />
         <meta name="og:description" content="Personal Website of Shimanta Krishna Bhuyan" />
-        <meta name="og:image" content="https://ik.imagekit.io/colorContrast/AssetsAILogo.png" />
+        <meta name="og:image" content="https://ik.imagekit.io/colorContrast/devkrishna_0PCwodeWS.png" />
         <meta name="og:image:type" content="image/png" />
-        <meta name="og:image:width" content="410" />
-        <meta name="og:image:height" content="436" />
+        <meta name="og:image:width" content="378" />
+        <meta name="og:image:height" content="185" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:domain" content="devkrishna.in" />
         <meta name="twitter:url" content="https://devkrishna.in" />
         <meta name="twitter:title" content="DevKrishna | Personal Website" />
         <meta name="twitter:description" content="Personal Website of Shimanta Krishna Bhuyan" />
-        <meta name="twitter:image" content="https://ik.imagekit.io/colorContrast/AssetsAILogo.png" />
+        <meta name="twitter:image" content="https://ik.imagekit.io/colorContrast/devkrishna_0PCwodeWS.png" />
         <meta name="og:image:type" content="image/png" />
-        <meta name="og:image:width" content="410" />
-        <meta name="og:image:height" content="436" />
+        <meta name="og:image:width" content="378" />
+        <meta name="og:image:height" content="185" />
 
         <link rel="icon" href="/assets/icon.ico" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" crossOrigin="anonymous" />
