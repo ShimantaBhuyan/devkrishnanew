@@ -22,7 +22,7 @@ export const Spaces = () => {
         </div>
       </div>
       {Object.values(pages).map((page: PAGE_TYPE) => {
-        return page.id !== 5 ? (
+        return page.id !== 5 && page.id !== 4 ? (
           <Link
             href={page.to}
             scroll={false}

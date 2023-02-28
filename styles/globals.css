@@ -196,7 +196,7 @@ svg.active .svg-elem-3 {
 
   .tile:hover:before {
     /* background-color: rgb(190, 190, 190); */
-    background-color: rgb(165, 179, 236);
+    background-color: rgb(200, 205, 224);
     inset: 0.4px;
   }
 }
