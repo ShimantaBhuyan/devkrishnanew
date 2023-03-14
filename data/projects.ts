@@ -2,7 +2,7 @@ export const projects = {
   tellmeaboutyourself: {
     id: "tellmeaboutyourself",
     to: "/projects/tellmeaboutyourself",
-    link: "https://www.tellmeaboutyourself.xyz",
+    link: "https://tellmeaboutyourself.xyz",
     img: "/assets/InterviewAILogo.png",
     title: "tellmeaboutyourself",
     subheading: "An AI partner to help crack interviews",
