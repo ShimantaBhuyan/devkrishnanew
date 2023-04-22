@@ -9,6 +9,16 @@ export const projects = {
     description: `Preparing for a behavioral interview can be a daunting task, especially if you're not sure what to expect. But with the right preparation, you can feel confident and ready to showcase your skills and experiences. The key is to think about specific examples from your past that illustrate the qualities and skills that employers are looking for.
     This is where this product comes in. By taking in your resume and parsing the data, this app can generate a personalized report of answers to commonly asked questions in a behavioral interview based on your experiences and skills. This report can help you to identify specific examples that highlight your strengths and demonstrate your ability to handle challenging situations. It also provides you with a clear structure for your answers, which can help you to stay focused and concise during the interview.`,
   },
+  diagramGenie: {
+    id: "diagramGenie",
+    to: "/projects/diagramGenie",
+    link: "https://diagram-genie.up.railway.app/",
+    img: "/assets/diagramGenie.png",
+    title: "DiagramGenie🔮",
+    subheading: "Text to software engineering diagrams",
+    description: `DiagramGenie is an innovative tool that allows users to create software engineering diagrams by just describing it in a few simple words. 
+    This AI-powered solution simplifies the process of creating complex diagrams and streamlines the workflow for software engineers and developers.`,
+  },
   assetsAI: {
     id: "assetsai",
     to: "/projects/assetsai",
