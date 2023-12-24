@@ -2,7 +2,14 @@ import React from "react";
 // import Navbar from "./Navbar";
 import Head from "next/head";
 import { Footer } from "./Footer";
+import { Inter } from "@next/font/google";
 // import styles from "../styles/Home.module.css";
+
+// If loading a variable font, you don't need to specify the font weight
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function Layout({ children }: { children: React.ReactElement }) {
   return (
@@ -30,7 +37,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
         <meta name="og:image:height" content="185" />
 
         <link rel="icon" href="/assets/icon.ico" />
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" crossOrigin="anonymous" />
+        {/* <link rel="stylesheet" href="https://rsms.me/inter/inter.css" crossOrigin="anonymous" /> */}
         <link
           href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap"
           rel="stylesheet"
@@ -38,7 +45,9 @@ export default function Layout({ children }: { children: React.ReactElement }) {
         />
       </Head>
       {/* <Navbar /> */}
-      <main className={"flex flex-col justify-center items-center box-border overflow-x-hidden overscroll-none"}>
+      <main
+        className={`flex flex-col justify-center items-center box-border overflow-x-hidden overscroll-none ${inter.className}`}
+      >
         {children}
       </main>
       <Footer />
