@@ -3,10 +3,19 @@ import Image from "next/image";
 import { pages } from "../data/pages";
 import { Socials } from "./Socials";
 import { LogoSVG } from "./LogoSVG";
+import { Inter } from "@next/font/google";
+
+// If loading a variable font, you don't need to specify the font weight
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col w-[100%] justify-center items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] pt-4 pb-8 sm:pb-4 sm:px-10">
+    <footer
+      className={`flex flex-col w-[100%] justify-center items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] pt-4 pb-8 sm:pb-4 sm:px-10, ${inter.className}`}
+    >
       <div className="flex justify-center items-center">
         <div className="max-w-[178px] max-h-[250px]">
           <Image src="/assets/avatar.png" alt="avatar image" width={178} height={250} className="object-cover" />
