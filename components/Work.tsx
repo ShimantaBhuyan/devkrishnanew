@@ -62,10 +62,7 @@ export const Work = () => {
             </span>
             <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">
               Founding Engineer - &nbsp;{" "}
-              <Link
-                href="https://drive.google.com/file/d/1fM4TGBCTc3NSbOEXJYezQTInrJk7s_DA/view?usp=sharing"
-                className="underline"
-              >
+              <Link href="https://viatunnel.com" className="underline">
                 Tunnel Platforms
               </Link>{" "}
               {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
