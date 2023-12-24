@@ -29,9 +29,101 @@ export const Work = () => {
               </svg>
             </span>
             <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">
+              Builder - &nbsp;{" "}
+              <Link href="https://chatgptunwrapped.com" className="underline">
+                ChatGPT UnWrapped
+              </Link>{" "}
+              {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
+              Latest
+            </span> */}
+            </h3>
+            <time className="block mb-2 text-sm font-normal leading-none text-gray-500">December 2023</time>
+            <ul className="mb-4 text-base font-normal text-gray-500 list-disc">
+              <li>Get your year in review in ChatGPT</li>
+              <li>Analyse your conversations (only the topics) to get a detailed report</li>
+              <li>15000+ ChatGPT conversations analysed!!</li>
+            </ul>
+          </li>
+          <li className="mb-10 ml-6">
+            <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-gray-600">
+              <svg
+                aria-hidden="true"
+                className="w-3 h-3 text-blue-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">
+              Founding Engineer - &nbsp;{" "}
+              <Link
+                href="https://drive.google.com/file/d/1fM4TGBCTc3NSbOEXJYezQTInrJk7s_DA/view?usp=sharing"
+                className="underline"
+              >
+                Tunnel Platforms
+              </Link>{" "}
+              {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
+              Latest
+            </span> */}
+            </h3>
+            <time className="block mb-2 text-sm font-normal leading-none text-gray-500">July 2023 - Present</time>
+            <ul className="mb-4 text-base font-normal text-gray-500 list-disc">
+              <li>
+                Building the simplest Accounts Payables automation platform - alpha launch with select customers in Q1
+                2024
+              </li>
+              <li>
+                Designed and built the entire system architecture of the platform from frontend app (a performant SPA
+                built with React), backend services (Golang) and infrastructure (AWS, Digital Ocean)
+              </li>
+              <li>
+                Built a custom, generic file mapper that can take in any CSV/Excel file and a configurable destination
+                dataset, to convert the input file data to required dataset, all on the browser
+              </li>
+              <li>Designed crucial payments streaming system architecture and developed core modules in Go</li>
+              <li>
+                Set up engineering handbooks to drive engineering efforts across the full stack of the application
+              </li>
+              <li>
+                Connected with our designer, prospective customers and industry experts to learn more about the pain
+                points and drive design in that direction
+              </li>
+              <li>Set up monitoring and observability pipeline in dev environment with Prometheus, Grafana, ELK</li>
+              <li>
+                Mentoring a backend engineer intern with daily responsibilities, from coding best practices to pair
+                programming
+              </li>
+            </ul>
+          </li>
+          <li className="mb-10 ml-6">
+            <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-gray-600">
+              <svg
+                aria-hidden="true"
+                className="w-3 h-3 text-blue-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">
               Founder - &nbsp;{" "}
-              <Link href="https://tellmeaboutyourself.xyz" className="underline">
-                tellmeaboutyourself
+              <Link
+                href="https://drive.google.com/file/d/1fM4TGBCTc3NSbOEXJYezQTInrJk7s_DA/view?usp=sharing"
+                className="underline"
+              >
+                tellmeaboutyourself (Acquired)
               </Link>{" "}
               {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
               Latest

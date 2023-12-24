@@ -109,7 +109,7 @@ const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = 
             transition={{
               delay: 0.5,
             }}
-            className="mt-5 text-md text-gray-600 space-y-5"
+            className="mt-5 text-md text-gray-600 space-y-5 *:w-full *:text-pretty *:whitespace-pre-line *:leading-relaxed *:box-border *:px-5"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           ></motion.div>
           <motion.h2

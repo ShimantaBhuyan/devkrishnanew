@@ -1,10 +1,27 @@
 export const projects = {
+  chatgptUnwrapped: {
+    id: "chatgptUnwrapped",
+    to: "/projects/chatgptUnwrapped",
+    link: "https://chatgptunwrapped.com",
+    img: "/assets/chatgpt-unwrapped.png",
+    title: "ChatGPT UnWrapped",
+    subheading: "UnWrap your ChatGPT conversations ✨",
+    description: `Ready to unpack your ChatGPT conversations and discover what makes you tick?
+    ChatGPT UnWrapped is here, and it's like your chat horoscope on steroids!
+    No need to worry about privacy: ChatGPT UnWrapped analyzes only your chat titles, not the actual content itself. Think of it as a magical data whisperer, revealing trends and insights without snooping on your messages.
+    Curious about what you chatted about the most in 2023?
+    - Did you conquer coding conundrums or master interview prep?
+    - Dive into fascinating discussions about finance, marketing, or the latest tech tools?
+    - Maybe you built creative connections, explored new languages, or even tackled database dilemmas?
+    ChatGPT UnWrapped shows you it all, painting a personalized picture of your chat journey. It's a fun way to reflect, level up your communication, and maybe even surprise yourself!`,
+  },
   tellmeaboutyourself: {
     id: "tellmeaboutyourself",
     to: "/projects/tellmeaboutyourself",
-    link: "https://tellmeaboutyourself.xyz",
+    // link: "https://tellmeaboutyourself.xyz",
+    link: "https://drive.google.com/file/d/1fM4TGBCTc3NSbOEXJYezQTInrJk7s_DA/view?usp=sharing",
     img: "/assets/InterviewAILogo.png",
-    title: "tellmeaboutyourself",
+    title: "tellmeaboutyourself (Acquired)",
     subheading: "An AI partner to help crack interviews",
     description: `Preparing for a behavioral interview can be a daunting task, especially if you're not sure what to expect. But with the right preparation, you can feel confident and ready to showcase your skills and experiences. The key is to think about specific examples from your past that illustrate the qualities and skills that employers are looking for.
     This is where this product comes in. By taking in your resume and parsing the data, this app can generate a personalized report of answers to commonly asked questions in a behavioral interview based on your experiences and skills. This report can help you to identify specific examples that highlight your strengths and demonstrate your ability to handle challenging situations. It also provides you with a clear structure for your answers, which can help you to stay focused and concise during the interview.`,
