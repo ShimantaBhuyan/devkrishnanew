@@ -41,7 +41,7 @@ export const Work = () => {
             <ul className="mb-4 text-base font-normal text-gray-500 list-disc">
               <li>Get your year in review in ChatGPT</li>
               <li>Analyse your conversations (only the topics) to get a detailed report</li>
-              <li>15000+ ChatGPT conversations analysed!!</li>
+              <li>80000+ ChatGPT conversations analysed!!</li>
             </ul>
           </li>
           <li className="mb-10 ml-6">
@@ -93,8 +93,8 @@ export const Work = () => {
               </li>
               <li>Set up monitoring and observability pipeline in dev environment with Prometheus, Grafana, ELK</li>
               <li>
-                Mentoring a backend engineer intern with daily responsibilities, from coding best practices to pair
-                programming
+                Mentored a backend engineer intern with daily responsibilities, from coding best practices to pair
+                programming on features
               </li>
             </ul>
           </li>
