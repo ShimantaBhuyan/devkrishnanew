@@ -77,11 +77,23 @@ export const Work = () => {
               </li>
               <li>
                 Designed and built the entire system architecture of the platform from frontend app (a performant SPA
-                built with React), backend services (Golang) and infrastructure (AWS, Digital Ocean)
+                built with React), backend services &amp; utilities (Golang, C#) and infrastructure (AWS, Digital Ocean)
+              </li>
+              <li>
+                Built an ERP Connector utility tool that connects to your on-premise ERP and syncs data directly to
+                Tunnel platform for easy and seamless payments transmission
+              </li>
+              <li>
+                Built custom tools to transform ERP data to payment files in multiple formats like CSV, Flatfile &amp;
+                EDI and push them to the banks
               </li>
               <li>
                 Built a custom, generic file mapper that can take in any CSV/Excel file and a configurable destination
                 dataset, to convert the input file data to required dataset, all on the browser
+              </li>
+              <li>
+                Refactored the backend codebase with clean code architecture and added unit tests to cover ~80% of
+                codebase
               </li>
               <li>Designed crucial payments streaming system architecture and developed core modules in Go</li>
               <li>
