@@ -7,7 +7,7 @@ export const pages = {
     placeholder: "/assets/blurred/work-image.png",
     title: "Work",
     description:
-      "I love building and shipping projects. Here you can find more about my 4+ years of professional work and my personal projects.",
+      "I love building and shipping projects. Here you can find more about my professional work and personal projects.",
     //   date: "Published on May 19, 2018",
     width: "512",
     height: "768",
