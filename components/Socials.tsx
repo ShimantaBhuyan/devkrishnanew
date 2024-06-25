@@ -57,7 +57,7 @@ export const Socials = ({ socials }: SOCIALS_TYPE) => {
             case "twitter":
               return (
                 <motion.li key={i} variants={listItem} className="group">
-                  <Link href={socials[social]} role="link" aria-label="Link to my Twitter account">
+                  <Link href={socials[social]} role="link" aria-label="Link to my Twitter account" target="_blank">
                     <TwitterLogo
                       size={32}
                       className="text-[#1DA1F2] group-hover:scale-110 transition-all ease-in-out duration-150"
@@ -68,7 +68,7 @@ export const Socials = ({ socials }: SOCIALS_TYPE) => {
             case "github":
               return (
                 <motion.li key={i} variants={listItem} className="group">
-                  <Link href={socials[social]} role="link" aria-label="Link to my Github account">
+                  <Link href={socials[social]} role="link" aria-label="Link to my Github account" target="_blank">
                     <GithubLogo
                       size={32}
                       className="text-[#171515] group-hover:scale-110 transition-all ease-in-out duration-150"
@@ -79,7 +79,7 @@ export const Socials = ({ socials }: SOCIALS_TYPE) => {
             case "linkedin":
               return (
                 <motion.li key={i} variants={listItem} className="group">
-                  <Link href={socials[social]} role="link" aria-label="Link to my LinkedIn account">
+                  <Link href={socials[social]} role="link" aria-label="Link to my LinkedIn account" target="_blank">
                     <LinkedinLogo
                       size={32}
                       className="text-[#0077b5] group-hover:scale-110 transition-all ease-in-out duration-150"
@@ -90,7 +90,7 @@ export const Socials = ({ socials }: SOCIALS_TYPE) => {
             case "pinterest":
               return (
                 <motion.li key={i} variants={listItem} className="group">
-                  <Link href={socials[social]} role="link" aria-label="Link to my Pinterest account">
+                  <Link href={socials[social]} role="link" aria-label="Link to my Pinterest account" target="_blank">
                     <PinterestLogo
                       size={32}
                       className="text-[#c8232c] group-hover:scale-110 transition-all ease-in-out duration-150"
@@ -101,7 +101,7 @@ export const Socials = ({ socials }: SOCIALS_TYPE) => {
             case "email":
               return (
                 <motion.li key={i} variants={listItem} className="group">
-                  <Link href={socials[social]} role="link" aria-label="My email address">
+                  <Link href={socials[social]} role="link" aria-label="My email address" target="_blank">
                     <Envelope
                       size={32}
                       className="text-[#c93139] group-hover:scale-110 transition-all ease-in-out duration-150"

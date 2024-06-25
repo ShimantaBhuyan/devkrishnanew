@@ -88,7 +88,7 @@ const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = 
           >
             {title}
           </motion.h2>
-          <Link href={link} className="self-center">
+          <Link href={link} className="self-center" target="_blank">
             <Image
               src={img}
               alt={title}
@@ -112,19 +112,21 @@ const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = 
             className="mt-5 text-md text-gray-600 space-y-5 *:w-full *:text-pretty *:whitespace-pre-line *:leading-relaxed *:box-border *:px-5"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           ></motion.div>
-          <motion.h2
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{
-              delay: 0.5,
-            }}
-            className="text-lg text-gray-800 self-center"
-          >
-            You can check out the project{" "}
-            <Link href={link} className="font-semibold underline">
-              here
-            </Link>
-          </motion.h2>
+          {link != "" ? (
+            <motion.h2
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{
+                delay: 0.5,
+              }}
+              className="text-lg text-gray-800 self-center"
+            >
+              You can check out the project{" "}
+              <Link href={link} className="font-semibold underline" target="_blank">
+                here
+              </Link>
+            </motion.h2>
+          ) : null}
         </div>
       </MotionConfig>
       {/* </div> */}

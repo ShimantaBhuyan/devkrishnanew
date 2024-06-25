@@ -29,7 +29,7 @@ export const projects = {
   diagramGenie: {
     id: "diagramGenie",
     to: "/projects/diagramGenie",
-    link: "https://diagram-genie.up.railway.app/",
+    link: "",
     img: "/assets/diagramGenie.png",
     title: "DiagramGenie🔮",
     subheading: "Text to software engineering diagrams",
@@ -85,7 +85,7 @@ export const projects = {
   "banjara trip": {
     id: "banjara-trip",
     to: "/projects/banjara-trip",
-    link: "https://banjaratrip.com",
+    link: "",
     img: "/assets/BanjaraTrip.png",
     title: "Banjara Trip Organizer",
     subheading: "Get on curated trips across Northeast India",

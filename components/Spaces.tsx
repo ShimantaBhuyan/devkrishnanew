@@ -28,6 +28,7 @@ export const Spaces = () => {
             scroll={false}
             key={page.id}
             className="overflow-hidden flex flex-col rounded-lg shadow-[5px_5px_0px_0px_rgba(109,40,217)] sm:hover:scale-105 sm:hover:shadow-[10px_10px_0px_0px_rgba(109,40,217)] sm:hover:z-10 transition-all ease-in-out relative duration-300 relative"
+            target="_blank"
           >
             <Image
               src={page.superImg}
