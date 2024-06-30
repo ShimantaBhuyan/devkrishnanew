@@ -20,7 +20,7 @@ export const About = () => {
         />
       </div>
       <h2 className="text-lg text-black font-semibold">
-        Currently tinkering with LLMs and Diffusion Models, a glimpse of which is my avatar picture above.
+        Currently building with LLMs and Diffusion Models, a glimpse of which is my avatar picture above.
       </h2>
       {/* </div> */}
     </div>
