@@ -3,9 +3,9 @@ import { pages } from "../data/pages";
 
 export const Random = () => {
   return (
-    <div className="flex flex-col justify-center items-center w-[100%]">
-      {/* <div className="flex justify-between gap-5 w-[100%]"> */}
-      <div className="overflow-hidden hidden w-[60%] sm:flex justify-center max-h-[100vh] mt-10">
+    <div className="flex flex-col justify-center items-center w-full">
+      {/* <div className="flex justify-between gap-5 w-full"> */}
+      <div className="overflow-hidden hidden w-[60%] sm:flex justify-center max-h-screen mt-10">
         <Image
           src={pages.random.superImg}
           alt={pages.random.title}

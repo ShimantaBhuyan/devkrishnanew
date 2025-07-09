@@ -40,14 +40,14 @@ const listItem = {
 
 export const Socials = ({ socials }: SOCIALS_TYPE) => {
   return (
-    <div className="flex flex-col sm:flex-row justify-center w-[100%] p-4 pt-10 sm:p-10">
-      <h2 className="text-xl sm:text-4xl font-bold tracking-tight text-center mb-2 w-[100%]">Connect with me on: </h2>
+    <div className="flex flex-col sm:flex-row justify-center w-full p-4 pt-10 sm:p-10">
+      <h2 className="text-xl sm:text-4xl font-bold tracking-tight text-center mb-2 w-full">Connect with me on: </h2>
       <motion.ul
         variants={container}
         whileInView="visible"
         viewport={{ once: true }}
         initial="hidden"
-        className="flex justify-between items-center w-[100%] max-w-[283px]"
+        className="flex justify-between items-center w-full max-w-[283px]"
         // transition={{
         //   staggerChildren: 0.4,
         // }}

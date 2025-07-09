@@ -17,7 +17,7 @@ export const LogoSVG = ({ color, noLogo }: { color: "white" | "black"; noLogo?: 
           height="100%"
           viewBox="0 0 120.000000 110.000000"
           preserveAspectRatio="xMidYMid meet"
-          className="w-0 [@media(hover:hover)]:group-hover:w-[100%] transition-all duration-700 ease-in-out"
+          className="w-0 [@media(hover:hover)]:group-hover:w-full transition-all duration-700 ease-in-out"
         >
           <g transform="translate(0.000000,110.000000) scale(0.100000,-0.100000)" fill={color} stroke={color}>
             <path

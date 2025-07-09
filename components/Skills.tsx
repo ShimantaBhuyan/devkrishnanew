@@ -199,8 +199,8 @@ const listItem = {
 
 export const Skills = () => {
   return (
-    <div className="flex flex-col items-center w-[100%] gap-10">
-      <div className="overflow-hidden hidden w-[60%] sm:flex justify-center max-h-[100vh] mt-10">
+    <div className="flex flex-col items-center w-full gap-10">
+      <div className="overflow-hidden hidden w-[60%] sm:flex justify-center max-h-screen mt-10">
         <Image
           src={pages.skills.superImg}
           alt={pages.skills.title}
@@ -217,13 +217,13 @@ export const Skills = () => {
 
       <h2 className="text-lg text-black mt-10">I work with these technologies</h2>
 
-      <div className="flex justify-center items-center w-[100%] p-4 pt-4 sm:p-10">
+      <div className="flex justify-center items-center w-full p-4 pt-4 sm:p-10">
         <motion.ul
           variants={container}
           whileInView="visible"
           viewport={{ once: true }}
           initial="hidden"
-          className="flex justify-evenly items-center flex-wrap w-[100%] gap-10"
+          className="flex justify-evenly items-center flex-wrap w-full gap-10"
           transition={{
             staggerChildren: 0.4,
           }}

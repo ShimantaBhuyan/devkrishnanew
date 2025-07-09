@@ -103,18 +103,18 @@ export const Loader = () => {
   }, []);
 
   return (
-    // bg-[url('/assets/bg.webp')] bg-cover bg-bottom sm:bg-[right_10px_bottom]
+    // bg-[url('/assets/bg.webp')] bg-cover bg-bottom sm:bg-position-[right_10px_bottom]
     <>
       <div className="absolute -top-6 left-0 scale-[0.7] z-10">
         <LogoSVG color="black" noLogo={true} key="header-logo" />
       </div>
       <div
-        className={`flex flex-col justify-center items-center relative bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 loaderBody ${
+        className={`flex flex-col justify-center items-center relative bg-linear-to-r from-indigo-200 via-red-200 to-yellow-100 loaderBody ${
           toggled ? "toggled" : ""
         } `}
         ref={loaderBodyRef}
       >
-        <div className="heroSection flex flex-col justify-center items-center h-[100vh] w-[100vw] absolute top-0 left-0">
+        <div className="heroSection flex flex-col justify-center items-center h-screen w-screen absolute top-0 left-0">
           <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-10">
             {/* bg-[url('https://ik.imagekit.io/colorContrast/devkrishna-super-images/contact-image_CkCSY0m80V.png')] bg-cover bg-bottom */}
             <div className="w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] flex justify-center items-center">
@@ -123,13 +123,13 @@ export const Loader = () => {
                 alt="avatar image"
                 width={450}
                 height={450}
-                className="object-cover rounded-full shadow-[rgba(0,_0,_0,_0.2)_0px_60px_40px_-7px]"
+                className="object-cover rounded-full shadow-[rgba(0,0,0,0.2)_0px_60px_40px_-7px]"
               />
             </div>
-            <div className="flex flex-col justify-center items-center w-[100%] px-4">
-              <h1 className="text-4xl sm:text-5xl sm:w-[100%] text-center sm:text-start font-medium bg-clip-text text-transparent bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600">
+            <div className="flex flex-col justify-center items-center w-full px-4">
+              <h1 className="text-4xl sm:text-5xl sm:w-full text-center sm:text-start font-medium bg-clip-text text-transparent bg-linear-to-b from-gray-900 via-purple-900 to-violet-600">
                 i&apos;m Shimanta <br /> welcome to my space in the <br />
-                <span className="text-4xl sm:text-5xl sm:w-[100%] text-center font-medium bg-clip-text text-transparent bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600">
+                <span className="text-4xl sm:text-5xl sm:w-full text-center font-medium bg-clip-text text-transparent bg-linear-to-b from-gray-900 via-purple-900 to-violet-600">
                   world wide web
                 </span>
               </h1>

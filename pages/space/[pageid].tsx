@@ -62,7 +62,7 @@ const PageDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ 
   };
 
   return (
-    <div className="flex flex-col min-h-screen w-[100%] sm:w-[75vw] sm:min-w-[75vw] p-10">
+    <div className="flex flex-col min-h-screen w-full sm:w-[75vw] sm:min-w-[75vw] p-10">
       {/* <div className="sticky top-10"> */}
       <MotionConfig>
         <motion.div

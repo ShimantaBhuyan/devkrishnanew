@@ -48,7 +48,7 @@ const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = 
   }
 
   return (
-    <div className="flex flex-col min-h-screen w-[100%] sm:w-[75vw] sm:min-w-[75vw] p-10">
+    <div className="flex flex-col min-h-screen w-full sm:w-[75vw] sm:min-w-[75vw] p-10">
       {/* <div className="sticky top-10"> */}
       <MotionConfig>
         <motion.div
@@ -77,7 +77,7 @@ const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = 
               <ArrowUpRightIcon className="w-4 h-4 text-gray-400 ml-2 group-hover:text-purple-400" />
             </a> */}
         </motion.div>
-        <div className="flex flex-col w-[100%] sm:w-[75vw] sm:min-w-[75vw] gap-10">
+        <div className="flex flex-col w-full sm:w-[75vw] sm:min-w-[75vw] gap-10">
           <motion.h2
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}

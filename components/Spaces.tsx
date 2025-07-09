@@ -6,7 +6,7 @@ import { HandPointing } from "phosphor-react";
 export const Spaces = () => {
   return (
     <div className="p-10 grid grid-cols-1 sm:grid-cols-3 gap-10 max-w-6xl mx-auto">
-      <div className="bg-gradient-to-b from-gray-700 via-gray-900 to-black p-8 flex flex-col rounded-2xl justify-center items-center">
+      <div className="bg-linear-to-b from-gray-700 via-gray-900 to-black p-8 flex flex-col rounded-2xl justify-center items-center">
         <h1 className="font-extrabold text-3xl xl:text-5xl text-purple-200 leading-tight">
           Explore <p className="text-white">my spaces</p> in{" "}
           <p className="text-white">
@@ -44,7 +44,7 @@ export const Spaces = () => {
               }}
               // className="group-hover:opacity-30"
             />
-            <div className="flex flex-col justify-center items-center backdrop-blur-sm bg-white/30 p-5 absolute bottom-0 left-0 rounded-b-lg w-[100%]">
+            <div className="flex flex-col justify-center items-center backdrop-blur-xs bg-white/30 p-5 absolute bottom-0 left-0 rounded-b-lg w-full">
               <h2 className="text-2xl text-black font-semibold">{page.title}</h2>
             </div>
           </Link>

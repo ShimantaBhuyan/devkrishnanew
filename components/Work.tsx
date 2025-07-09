@@ -8,7 +8,7 @@ import { SquaresFour, Stack } from "phosphor-react";
 export const Work = () => {
   const [projectView, setProjectView] = useState<"grid" | "stack">("stack");
   return (
-    <div className="flex flex-col items-center w-[100%] gap-10">
+    <div className="flex flex-col items-center w-full gap-10">
       <div className="flex flex-col justify-center gap-5 my-5">
         <h2 className="text-xl text-black">Work Experience</h2>
         <ol className="relative border-l border-gray-400 p-5">
@@ -63,7 +63,7 @@ export const Work = () => {
               <Link href="https://viatunnel.com" className="underline" target="_blank">
                 Tunnel Platforms
               </Link>{" "}
-              {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
+              {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300 ml-3">
               Latest
             </span> */}
             </h3>
@@ -133,7 +133,7 @@ export const Work = () => {
               >
                 tellmeaboutyourself (Acquired)
               </Link>{" "}
-              {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
+              {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300 ml-3">
               Latest
             </span> */}
             </h3>
@@ -220,7 +220,7 @@ export const Work = () => {
             </span>
             <h3 className="items-center mb-1 text-lg font-semibold text-gray-900">
               SDE 2 - Jupiter Money{" "}
-              {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
+              {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300 ml-3">
               Latest
             </span> */}
             </h3>
@@ -253,7 +253,7 @@ export const Work = () => {
             </span>
             <h3 className="items-center mb-1 text-lg font-semibold text-gray-900">
               SDE 1 - Swiggy{" "}
-              {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
+              {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300 ml-3">
               Latest
             </span> */}
             </h3>
@@ -295,7 +295,7 @@ export const Work = () => {
             </span>
             <h3 className="tems-center mb-1 text-lg font-semibold text-gray-900">
               Associate Software Development Engineer - AVEVA{" "}
-              {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
+              {/* <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300 ml-3">
               Latest
             </span> */}
             </h3>
@@ -311,7 +311,7 @@ export const Work = () => {
           </li>
         </ol>
       </div>
-      {/* <div className="overflow-hidden hidden w-[60%] sm:flex justify-center max-h-[100vh]">
+      {/* <div className="overflow-hidden hidden w-[60%] sm:flex justify-center max-h-screen">
           <Image
             src={pages.work.superImg}
             alt={pages.work.title}
@@ -328,7 +328,7 @@ export const Work = () => {
       <h2 className="text-lg text-black">
         These are some of my most coveted projects and which I&apos;ve loved spending my time building!
       </h2>
-      {/* <div className="grid grid-cols-3 w-[100%]"> */}
+      {/* <div className="grid grid-cols-3 w-full"> */}
       <div className="flex justify-between items-center p-5 w-fit gap-20">
         <Stack
           size={30}
