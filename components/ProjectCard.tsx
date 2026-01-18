@@ -63,7 +63,7 @@ export const ProjectCard = ({
         style={{ objectFit: "contain" }}
         className="w-[290px] sm:w-[350px] h-[230px] p-3 pointer-events-none"
       />
-      <h2 className="text-gray-800 text-md sm:text-lg p-5">{project.title}</h2>
+      <h2 className="text-md sm:text-lg p-5">{project.title}</h2>
     </motion.div>
   );
 };

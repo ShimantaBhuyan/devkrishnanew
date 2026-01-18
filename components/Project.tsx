@@ -20,7 +20,7 @@ export const Project = ({ projectView }: { projectView: "stack" | "grid" }) => {
       className="relative flex items-center justify-center w-[290px] sm:w-[350px] h-[230px] max-h-[230px] sm:mb-20 mt-10 sm:mt-20"
       ref={draggableRef}
     >
-      <div className="relative w-fit w-[290px] sm:w-[350px] h-[230px] max-h-[230px] flex justify-center items-center">
+      <div className="relative w-[290px] sm:w-[350px] h-[230px] max-h-[230px] flex justify-center items-center">
         {cards.map((project, index) => {
           const canDrag = index === 0;
 

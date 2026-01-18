@@ -9,6 +9,7 @@ import { GetStaticProps, GetStaticPaths } from "next/types";
 import { remark } from "remark";
 import html from "remark-html";
 import Link from "next/link";
+import { ImageModal } from "../../components/ImageModal";
 
 export async function getStaticPaths() {
   return {
@@ -31,11 +32,13 @@ export const getStaticProps: GetStaticProps = async context => {
       img: page?.img,
       link: page?.link,
       contentHtml,
+      zoomable: 'zoomable' in (page ?? {}) ? (page as any).zoomable || false : false,
+      largeImage: 'largeImage' in (page ?? {}) ? (page as any).largeImage || false : false,
     },
   };
 };
 
-const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ title, link, img, contentHtml }) => {
+const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ title, link, img, contentHtml, zoomable, largeImage }) => {
   const router = useRouter();
   useEffect(() => {
     // scroll to top on load
@@ -64,7 +67,7 @@ const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = 
             onClick={() => router.back()}
             className="inline-flex items-center rounded-md border border-gray-300 bg-white pl-3 pr-4 py-2 text-sm font-medium text-gray-700 hover:text-white hover:bg-purple-600 hover:border-purple-600 focus:border-purple-200 focus:outline-0 focus:ring-2 focus:ring-purple-300 group"
           >
-            <ArrowLeft size={20} className="w-5 h-5 mr-2 text-gray-300 group-hover:text-purple-200" />
+            <ArrowLeft size={20} className="w-5 h-5 mr-2 text-gray-600 group-hover:text-purple-200" />
             Back
           </button>
           {/* <a
@@ -88,20 +91,32 @@ const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = 
           >
             {title}
           </motion.h2>
-          <Link href={link} className="self-center" target="_blank">
-            <Image
-              src={img}
-              alt={title}
-              //   placeholder="blur"
-              //   blurDataURL={page.placeholder}
-              width={300}
-              height={300}
-              style={{
-                objectFit: "contain",
-              }}
-              className="rounded-lg flex mt-4 bg-purple-500/30 shadow-2xl p-4"
-            />
-          </Link>
+          {zoomable ? (
+            <div className="self-center">
+              <ImageModal
+                src={img}
+                alt={title}
+                width={largeImage ? 600 : 300}
+                height={largeImage ? 600 : 300}
+                className="flex mt-4"
+              />
+            </div>
+          ) : (
+            <Link href={link} className={`self-center ${link == "" && "pointer-events-none"}`} target="_blank">
+              <Image
+                src={img}
+                alt={title}
+                //   placeholder="blur"
+                //   blurDataURL={page.placeholder}
+                width={largeImage ? 600 : 300}
+                height={largeImage ? 600 : 300}
+                style={{
+                  objectFit: "contain",
+                }}
+                className="rounded-lg flex mt-4 bg-purple-500/30 shadow-2xl p-4"
+              />
+            </Link>
+          )}
 
           <motion.div
             initial={{ x: 100, opacity: 0 }}
@@ -109,7 +124,7 @@ const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = 
             transition={{
               delay: 0.5,
             }}
-            className="mt-5 text-md text-gray-600 space-y-5 *:w-full *:text-pretty *:whitespace-pre-line *:leading-relaxed *:box-border *:px-5"
+            className="mt-5 text-md space-y-5 *:w-full *:text-pretty *:whitespace-pre-line *:leading-relaxed *:box-border *:px-5"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           ></motion.div>
           {link != "" ? (
@@ -119,7 +134,7 @@ const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = 
               transition={{
                 delay: 0.5,
               }}
-              className="text-lg text-gray-800 self-center"
+              className="text-lg self-center"
             >
               You can check out the project{" "}
               <Link href={link} className="font-semibold underline" target="_blank">

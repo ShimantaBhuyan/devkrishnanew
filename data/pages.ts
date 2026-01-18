@@ -5,13 +5,16 @@ export const pages = {
     img: "/assets/work-image.png",
     superImg: "https://ik.imagekit.io/colorContrast/devkrishna-super-images/work-image_pznSct7btH.png",
     placeholder: "/assets/blurred/work-image.png",
-    title: "Work",
+    title: "Professional Experience",
     description:
-      "I love building and shipping projects. Here you can find more about my professional work and personal projects.",
+      "I have had the opportunity to work in different domains and at various stages of an organisation, right from an MNC to being the Employee #1 at a startup",
     //   date: "Published on May 19, 2018",
     width: "512",
     height: "768",
-  },
+    gridSize: "col-span-1 row-span-2",
+    gridTextColor: "text-white",
+    gridImageAlign: "object-bottom",
+  } as PAGE_TYPE,
   skills: {
     id: 1,
     to: "/space/skills",
@@ -23,7 +26,10 @@ export const pages = {
     //   date: "Published on May 19, 2018",
     width: "512",
     height: "768",
-  },
+    gridSize: "col-span-1 row-span-1",
+    gridTextColor: "text-white",
+    gridImageAlign: "object-center",
+  } as PAGE_TYPE,
   random: {
     id: 2,
     to: "/space/random",
@@ -49,7 +55,7 @@ export const pages = {
     //   date: "Published on May 19, 2018",
     width: "512",
     height: "768",
-  },
+  } as PAGE_TYPE,
   "for-chronicle": {
     id: 4,
     to: "/space/for-chronicle",
@@ -62,7 +68,7 @@ export const pages = {
     //   date: "Published on May 19, 2018",
     width: "512",
     height: "768",
-  },
+  } as PAGE_TYPE,
   contact: {
     id: 5,
     to: "/space/contact",
@@ -83,7 +89,21 @@ export const pages = {
     //   date: "Published on May 19, 2018",
     width: "512",
     height: "768",
-  },
+  } as PAGE_TYPE,
+  projects: {
+    id: 6,
+    to: "/projects",
+    img: "https://ik.imagekit.io/myapps/excelstatement-og-image.png?updatedAt=1724568436346&tr=w-1200%2Ch-675%2Cfo-auto",
+    superImg: "https://ik.imagekit.io/colorContrast/devkrishna-super-images/chill-image_0gew3YuAH4.png",
+    placeholder: "/assets/blurred/chill-image.png",
+    title: "Projects",
+    description: "I love building and shipping projects. Here you can find more about my personal projects.",
+    width: "512",
+    height: "768",
+    gridSize: "col-span-1 row-span-1",
+    gridTextColor: "text-white",
+    gridImageAlign: "object-center",
+  } as PAGE_TYPE,
 };
 
 export type PAGE_TYPE = {
@@ -102,4 +122,9 @@ export type PAGE_TYPE = {
   width: string;
   height: string;
   hidden?: boolean;
+  gridSize?: string;
+  gridTextColor?: string;
+  gridImageAlign?: string;
 };
+
+export const displayPages = [pages.work, pages.skills, pages.projects, pages.myspace, pages.contact];

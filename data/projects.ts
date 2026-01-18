@@ -1,20 +1,43 @@
 export const projects = {
-  chatgptUnwrapped: {
-    id: "chatgptUnwrapped",
-    to: "/projects/chatgptUnwrapped",
-    link: "https://chatgptunwrapped.com",
-    img: "/assets/chatgpt-unwrapped.png",
-    title: "ChatGPT UnWrapped",
-    subheading: "UnWrap your ChatGPT conversations ✨",
-    description: `Ready to unpack your ChatGPT conversations and discover what makes you tick?
-    ChatGPT UnWrapped is here, and it's like your chat horoscope on steroids!
-    No need to worry about privacy: ChatGPT UnWrapped analyzes only your chat titles, not the actual content itself. Think of it as a magical data whisperer, revealing trends and insights without snooping on your messages.
-    Curious about what you chatted about the most in 2023?
-    - Did you conquer coding conundrums or master interview prep?
-    - Dive into fascinating discussions about finance, marketing, or the latest tech tools?
-    - Maybe you built creative connections, explored new languages, or even tackled database dilemmas?
-    ChatGPT UnWrapped shows you it all, painting a personalized picture of your chat journey. It's a fun way to reflect, level up your communication, and maybe even surprise yourself!`,
+  groceryExpenseManager: {
+    id: "groceryExpenseManager",
+    to: "/projects/groceryExpenseManager",
+    link: "",
+    title: "Grocery Expense Manager",
+    subheading: "Tool to manage shared grocery expenses in my household",
+    description: `Grocery Expense Manager is a tool that helps me manage the shared grocery expenses in my household. 
+    It allows me to add my, and other folks in my family's grocery expenses from the different online quick commerce platforms and categorise them, along with an option to download the expenses as a CSV file for tracking them on a month-on-month basis.`,
+    img: "/assets/grocery-expense-manager.png",
+    zoomable: true,
+    largeImage: true,
   },
+  excelStatement: {
+    id: "excelStatement",
+    to: "/projects/excelStatement",
+    link: "https://excelStatement.com",
+    title: "Excel Statement",
+    subheading: "Convert Bank & Credit Card Statements to Excel, Privately",
+    description: `Safely extract any of your bank and credit card statement to an Excel file and analyze privately — no storage, no email access. Using the SOTA LLMs, you can now extract your personal financial statements like your bank account and credit card statements and analyse them privately in just one click; without handing over access of your SMS, Emails and more such sensitive information to large corporations. Also you can categorise each transaction automatically using the power of the SOTA large language models.`,
+    img: "https://ik.imagekit.io/myapps/excelstatement-og-image.png?updatedAt=1724568436346&tr=w-1200%2Ch-675%2Cfo-auto",
+    zoomable: true,
+    largeImage: true,
+  } as PROJECT_TYPE,
+  // chatgptUnwrapped: {
+  //   id: "chatgptUnwrapped",
+  //   to: "/projects/chatgptUnwrapped",
+  //   link: "https://chatgptunwrapped.com",
+  //   img: "/assets/chatgpt-unwrapped.png",
+  //   title: "ChatGPT UnWrapped",
+  //   subheading: "UnWrap your ChatGPT conversations ✨",
+  //   description: `Ready to unpack your ChatGPT conversations and discover what makes you tick?
+  //   ChatGPT UnWrapped is here, and it's like your chat horoscope on steroids!
+  //   No need to worry about privacy: ChatGPT UnWrapped analyzes only your chat titles, not the actual content itself. Think of it as a magical data whisperer, revealing trends and insights without snooping on your messages.
+  //   Curious about what you chatted about the most in 2023?
+  //   - Did you conquer coding conundrums or master interview prep?
+  //   - Dive into fascinating discussions about finance, marketing, or the latest tech tools?
+  //   - Maybe you built creative connections, explored new languages, or even tackled database dilemmas?
+  //   ChatGPT UnWrapped shows you it all, painting a personalized picture of your chat journey. It's a fun way to reflect, level up your communication, and maybe even surprise yourself!`,
+  // },
   tellmeaboutyourself: {
     id: "tellmeaboutyourself",
     to: "/projects/tellmeaboutyourself",
@@ -35,21 +58,23 @@ export const projects = {
     subheading: "Text to software engineering diagrams",
     description: `DiagramGenie is an innovative tool that allows users to create software engineering diagrams by just describing it in a few simple words. 
     This AI-powered solution simplifies the process of creating complex diagrams and streamlines the workflow for software engineers and developers.`,
+    zoomable: true,
+    largeImage: true,
   },
-  assetsAI: {
-    id: "assetsai",
-    to: "/projects/assetsai",
-    link: "https://www.assetsai.art",
-    img: "/assets/AssetsAILogo.webp",
-    title: "AssetsAI",
-    subheading: "A marketplace for purchasing AI generated game assets",
-    description: `I built AssetsAI when exploring Stable Diffusion back in 2022. The scene was rising with people rolling out projects every other day using Stable Diffusion and Dreambooth. \n\nAfter getting my hands on it for a while, I came up with this idea to create a marketplace for purchasing AI generated game assets. I found out that the game dev community didn't have anything in particular to generate game assets. \n\nWith this project, I had created a platform of over 300+ curated game assets from 10+ categories so that game developers can utilise these and make their development cycle shorter, or take inspiration from these and help their building process.       
-    Even though I wasn't able to get any sales, mostly due to me not marketing it in the relevant platforms and channels, It has around 150 weekly active users still.`,
-  },
+  // assetsAI: {
+  //   id: "assetsai",
+  //   to: "/projects/assetsai",
+  //   link: "https://www.assetsai.art",
+  //   img: "/assets/AssetsAILogo.webp",
+  //   title: "AssetsAI",
+  //   subheading: "A marketplace for purchasing AI generated game assets",
+  //   description: `I built AssetsAI when exploring Stable Diffusion back in 2022. The scene was rising with people rolling out projects every other day using Stable Diffusion and Dreambooth. \n\nAfter getting my hands on it for a while, I came up with this idea to create a marketplace for purchasing AI generated game assets. I found out that the game dev community didn't have anything in particular to generate game assets. \n\nWith this project, I had created a platform of over 300+ curated game assets from 10+ categories so that game developers can utilise these and make their development cycle shorter, or take inspiration from these and help their building process.       
+  //   Even though I wasn't able to get any sales, mostly due to me not marketing it in the relevant platforms and channels, It has around 150 weekly active users still.`,
+  // },
   strategyQR: {
     id: "strategyqr",
     to: "/projects/strategyqr",
-    link: "https://strategyqr.com",
+    link: "https://qr-factory.vercel.app",
     img: "/assets/StrategyQR.png",
     title: "StrategyQR",
     subheading: "Custom QR code marketing tool",
@@ -72,6 +97,8 @@ export const projects = {
     title: "Color Contrast Analyser",
     subheading: "A tool that analyzes the color contrast of website foreground and background",
     description: `This is a tool that analyses the color contrast of a foreground and background color that you use in a website or in general, in a digital medium.  \n\nThe current WCAG 2.1 guidelines regarding color contrast are broken in the sense that they are mathematical in nature and do not completely take into picture human perception. All humans perceive colors differently, and some folks with problems like color blindness have difficulty detecting some colors as well. \n\nThe candidate WCAG 3 algorithm for color contrast, APCA. Accessible Perceptual Contrast Algorithm (APCA) is a contrast assessment method for predicting the perceived contrast between sRGB colors on a computer monitor. It has been developed as an assessment method for W3 Silver/WCAG3 accessibility standards relating to content for computer displays and mobile devices, with a focus on readability and understandability. It is based on human perception of colors and backwards compatible with WCAG 2.1`,
+    zoomable: true,
+    largeImage: true,
   },
   "digit recognition": {
     id: "digit-recognition",
@@ -90,6 +117,8 @@ export const projects = {
     title: "Banjara Trip Organizer",
     subheading: "Get on curated trips across Northeast India",
     description: `I built this website for a trip organizer company in Northeast India. \n\nThis is one of my freelance projects which I did when I was pursuing my undergraduate studies. Founded by 2 of my hostel mates, they provide curated trips across the pristine Northeastern part of India and also plan travel to and fro different events which were organized by third parties, notably Weekender.`,
+    zoomable: true,
+    largeImage: true,
   },
 };
 
@@ -101,4 +130,6 @@ export type PROJECT_TYPE = {
   title: string;
   subheading: string;
   description: string;
+  zoomable?: boolean;
+  largeImage?: boolean;
 };
