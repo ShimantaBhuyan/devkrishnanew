@@ -1,4 +1,15 @@
 export const projects = {
+  mapToPoster: {
+    id: "mapToPoster",
+    to: "/projects/mapToPoster",
+    link: "https://map-to-poster.devkrishna.in/",
+    title: "Map to Poster",
+    subheading: "Tool to convert maps of any location to posters",
+    description: `MapToPoster JS is a client-side web application designed to generate high-resolution map posters. It allows users to search for any location in the world and transform it into a piece of art with customizable themes, layouts, and exports.`,
+    img: "/assets/mapToPoster.jpeg",
+    zoomable: true,
+    largeImage: true,
+  },
   groceryExpenseManager: {
     id: "groceryExpenseManager",
     to: "/projects/groceryExpenseManager",
