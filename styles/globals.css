@@ -69,7 +69,7 @@
 
 /* Light/Dark Theme Root Variables */
 html[data-theme="light"] {
-  --bg: #cfcfcf;
+  --bg: #ebebeb;
   --text: #4d4d4d;
   --border: #b7b7b7;
   --card-bg: #fff;

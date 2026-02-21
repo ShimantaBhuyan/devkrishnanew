@@ -1,5 +1,5 @@
 <svg width="480" height="240" viewBox="0 0 480 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="480" height="240" rx="12" fill="#CFCFCF"/>
+<rect width="480" height="240" rx="12" fill="#ebebeb"/>
 <rect x="281" y="177" width="174" height="41" rx="5" stroke="#898989" stroke-width="2"/>
 <path d="M293 207.979L294.003 187.043L301.528 203.894L306.043 192.66L316.578 209V188.574L324.103 203.894L335.641 187.043L340.156 205.936L346.176 188.574L354.203 200.319L386.811 185L405.372 201.851L425.94 187.043L444 200.319" stroke="#4D4D4D" stroke-width="3"/>
 <path d="M370 158V158.596V162.231V163C370 164.105 369.105 165 368 165C366.895 165 366 164.105 366 163V158C366 156.895 366.895 156 368 156C369.105 156 370 156.895 370 158Z" stroke="#4D4D4D" stroke-width="2"/>
@@ -98,11 +98,11 @@
 <rect x="158" y="199" width="9" height="2" fill="#898989"/>
 <rect x="158" y="206" width="9" height="2" fill="#898989"/>
 <g clip-path="url(#clip0_154_2166)">
-<rect x="144" y="201" width="19" height="10" fill="#CFCFCF"/>
+<rect x="144" y="201" width="19" height="10" fill="#ebebeb"/>
 <rect x="145" y="202" width="17" height="8" stroke="#898989" stroke-width="2"/>
 <path d="M148 206H159" stroke="#4D4D4D" stroke-width="2"/>
 </g>
-<rect x="143" y="200" width="21" height="12" stroke="#CFCFCF" stroke-width="2"/>
+<rect x="143" y="200" width="21" height="12" stroke="#ebebeb" stroke-width="2"/>
 <path d="M121 141V134H134V141" stroke="#898989" stroke-width="2"/>
 <path d="M120 175V168H126.5V174H132V168" stroke="#898989" stroke-width="2"/>
 <path d="M120 207.5V206.889C120 205.293 121.293 204 122.889 204H123.5C125.157 204 126.5 205.343 126.5 207V207.25C126.5 208.769 127.731 210 129.25 210V210C130.769 210 132 208.769 132 207.25V205" stroke="#898989" stroke-width="2"/>
@@ -166,11 +166,11 @@
 <rect x="158" y="101" width="9" height="2" fill="#898989"/>
 <rect x="158" y="108" width="9" height="2" fill="#898989"/>
 <g clip-path="url(#clip1_154_2166)">
-<rect x="144" y="103" width="19" height="10" fill="#CFCFCF"/>
+<rect x="144" y="103" width="19" height="10" fill="#ebebeb"/>
 <rect x="145" y="104" width="17" height="8" stroke="#898989" stroke-width="2"/>
 <path d="M148 108H159" stroke="#4D4D4D" stroke-width="2"/>
 </g>
-<rect x="143" y="102" width="21" height="12" stroke="#CFCFCF" stroke-width="2"/>
+<rect x="143" y="102" width="21" height="12" stroke="#ebebeb" stroke-width="2"/>
 <path d="M121 42V35L134 42" stroke="#898989" stroke-width="2"/>
 <path d="M120 76V69H126.5V75H132V69" stroke="#898989" stroke-width="2"/>
 <path d="M120 109.5V108.889C120 107.293 121.293 106 122.889 106H123.5C125.157 106 126.5 107.343 126.5 109V109.25C126.5 110.769 127.731 112 129.25 112V112C130.769 112 132 110.769 132 109.25V107" stroke="#898989" stroke-width="2"/>

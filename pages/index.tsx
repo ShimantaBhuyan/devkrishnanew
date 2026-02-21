@@ -54,14 +54,14 @@ export default function HomePage() {
   return (
     <div
       className={`min-h-screen w-screen p-6 md:p-12 transition-all duration-500 ${akkuratFont.className} ${
-        theme === "light" ? "bg-[#CFCFCF] text-[#4D4D4D]" : "bg-[#0e0e12] text-white"
+        theme === "light" ? "bg-[#ebebeb] text-[#4D4D4D]" : "bg-[#0e0e12] text-white"
       }`}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div
           className={`mb-6 pt-8 md:p-0 rounded-lg group border-none transition-all duration-500 ${
-            theme == "light" ? "border-[#B7B7B7] bg-[#cfcfcf]" : "border-[#2260ee] bg-[#0e0e12]"
+            theme == "light" ? "border-[#B7B7B7] bg-[#ebebeb]" : "border-[#2260ee] bg-[#0e0e12]"
           }`}
         >
           <div className="flex justify-between items-center">
@@ -103,7 +103,7 @@ export default function HomePage() {
             <div
               className={`relative rounded-lg pb-4 transition-all duration-300 cursor-pointer hover:transition-shadow ${
                 theme === "light"
-                  ? "border-2 border-[#B7B7B7] bg-[#cfcfcf] hover:shadow-2xl"
+                  ? "border-2 border-[#B7B7B7] bg-[#ebebeb] hover:shadow-2xl"
                   : "border-2 border-[#2260ee] bg-transparent hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]"
               }`}
             >
@@ -129,7 +129,7 @@ export default function HomePage() {
             <div
               className={`relative rounded-lg pb-4 transition-all duration-300 cursor-pointer hover:transition-shadow ${
                 theme === "light"
-                  ? "border-2 border-[#B7B7B7] bg-[#cfcfcf] hover:shadow-2xl"
+                  ? "border-2 border-[#B7B7B7] bg-[#ebebeb] hover:shadow-2xl"
                   : "border-2 border-[#2260ee] bg-transparent hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]"
               }`}
             >
@@ -155,7 +155,7 @@ export default function HomePage() {
             <div
               className={`relative rounded-lg pb-4 transition-all duration-300 cursor-pointer hover:transition-shadow ${
                 theme === "light"
-                  ? "border-2 border-[#B7B7B7] bg-[#cfcfcf] hover:shadow-2xl"
+                  ? "border-2 border-[#B7B7B7] bg-[#ebebeb] hover:shadow-2xl"
                   : "border-2 border-[#2260ee] bg-transparent hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]"
               }`}
             >
@@ -181,7 +181,7 @@ export default function HomePage() {
             <div
               className={`relative rounded-lg pb-4 transition-all duration-300 cursor-pointer hover:transition-shadow ${
                 theme === "light"
-                  ? "border-2 border-[#B7B7B7] bg-[#cfcfcf] hover:shadow-2xl"
+                  ? "border-2 border-[#B7B7B7] bg-[#ebebeb] hover:shadow-2xl"
                   : "border-2 border-[#2260ee] bg-transparent hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]"
               }`}
             >

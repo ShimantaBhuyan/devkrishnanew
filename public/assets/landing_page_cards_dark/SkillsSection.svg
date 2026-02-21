@@ -98,11 +98,11 @@
 <rect x="158" y="199" width="9" height="2" fill="#686868"/>
 <rect x="158" y="206" width="9" height="2" fill="#686868"/>
 <g clip-path="url(#clip0_155_4117)">
-<rect x="144" y="201" width="19" height="10" fill="#CFCFCF"/>
+<rect x="144" y="201" width="19" height="10" fill="#ebebeb"/>
 <rect x="145" y="202" width="17" height="8" stroke="#686868" stroke-width="2"/>
 <path d="M148 206H159" stroke="#E6E6E6" stroke-width="2"/>
 </g>
-<rect x="143" y="200" width="21" height="12" stroke="#CFCFCF" stroke-width="2"/>
+<rect x="143" y="200" width="21" height="12" stroke="#ebebeb" stroke-width="2"/>
 <path d="M121 141V134H134V141" stroke="#686868" stroke-width="2"/>
 <path d="M120 175V168H126.5V174H132V168" stroke="#686868" stroke-width="2"/>
 <path d="M120 207.5V206.889C120 205.293 121.293 204 122.889 204H123.5C125.157 204 126.5 205.343 126.5 207V207.25C126.5 208.769 127.731 210 129.25 210V210C130.769 210 132 208.769 132 207.25V205" stroke="#686868" stroke-width="2"/>
@@ -166,11 +166,11 @@
 <rect x="158" y="101" width="9" height="2" fill="#686868"/>
 <rect x="158" y="108" width="9" height="2" fill="#686868"/>
 <g clip-path="url(#clip1_155_4117)">
-<rect x="144" y="103" width="19" height="10" fill="#CFCFCF"/>
+<rect x="144" y="103" width="19" height="10" fill="#ebebeb"/>
 <rect x="145" y="104" width="17" height="8" stroke="#686868" stroke-width="2"/>
 <path d="M148 108H159" stroke="#E6E6E6" stroke-width="2"/>
 </g>
-<rect x="143" y="102" width="21" height="12" stroke="#CFCFCF" stroke-width="2"/>
+<rect x="143" y="102" width="21" height="12" stroke="#ebebeb" stroke-width="2"/>
 <path d="M121 42V35L134 42" stroke="#686868" stroke-width="2"/>
 <path d="M120 76V69H126.5V75H132V69" stroke="#686868" stroke-width="2"/>
 <path d="M120 109.5V108.889C120 107.293 121.293 106 122.889 106H123.5C125.157 106 126.5 107.343 126.5 109V109.25C126.5 110.769 127.731 112 129.25 112V112C130.769 112 132 110.769 132 109.25V107" stroke="#686868" stroke-width="2"/>
