@@ -1,7 +1,7 @@
 import * as React from "react";
 const SvgComponent = (props: any) => (
   // width="300" height="300"
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" /* width="300" height="300" */ {...props}>
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" {...props}>
     <g fill="currentColor" strokeWidth={4}>
       <path
         d="M0 0 C6.6 0.33 13.2 0.66 20 1 C19.67 1.66 19.34 2.32 19 3 C16.20826945 3.02690104 13.41679652 3.04679053 10.625 3.0625 C9.43390625 3.07506836 9.43390625 3.07506836 8.21875 3.08789062 C2.2265625 3.11328125 2.2265625 3.11328125 0 2 C0 1.34 0 0.68 0 0 Z "

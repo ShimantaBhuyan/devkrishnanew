@@ -97,7 +97,7 @@ const PageDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ 
         >
           {page.title}
         </motion.h2>
-        <Image
+        {/* <Image
           src={
             pageid == "myspace"
               ? "https://ik.imagekit.io/colorContrast/devkrishna-super-images/me_p3i7WVNw-.png"
@@ -112,7 +112,7 @@ const PageDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ 
             objectFit: "cover",
           }}
           className="rounded-lg flex sm:hidden mt-4"
-        />
+        /> */}
         {/* <motion.div
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
