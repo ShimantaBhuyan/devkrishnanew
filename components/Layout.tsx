@@ -124,7 +124,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
         </button>
         {/* <Navbar /> */}
         <main
-          className={`flex flex-col justify-center items-center box-border overflow-x-hidden overscroll-none ${akkuratFont.className}`}
+          className={`flex flex-col justify-center items-center box-border overflow-x-clip ${akkuratFont.className}`}
         >
           {children}
         </main>
