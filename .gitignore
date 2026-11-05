@@ -35,3 +35,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local design prototypes and Claude Code dev-server config
+/concepts/
+/.claude/launch.json
