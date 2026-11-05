@@ -23,14 +23,14 @@ html[data-theme="light"] {
   --bg: #ebebeb;
   --ink: #16181d;
   --muted: #54585f;
-  --accent: #2260ee;
-  --accent-strong: #2260ee;
+  --accent: #b33c0c; /* ember */
+  --accent-strong: #b33c0c;
   --line: rgb(22 24 29 / 0.12);
   --line-strong: rgb(22 24 29 / 0.3);
-  --chip: rgb(34 96 238 / 0.07);
+  --chip: rgb(179 60 12 / 0.07);
   --p-base: 30, 36, 46;
-  --p-alt: 34, 96, 238;
-  --p-hot: 34, 96, 238;
+  --p-alt: 179, 60, 12;
+  --p-hot: 179, 60, 12;
   --p-blend: source-over;
 }
 
