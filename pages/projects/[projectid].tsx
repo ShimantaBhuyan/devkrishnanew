@@ -1,152 +1,59 @@
 import Image from "next/image";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { projects } from "../../data/projects";
-import { motion, MotionConfig } from "framer-motion";
-import { ArrowLeft } from "phosphor-react";
-import { InferGetStaticPropsType } from "next/types";
-import { GetStaticProps, GetStaticPaths } from "next/types";
+import type { GetStaticProps, InferGetStaticPropsType } from "next/types";
 import { remark } from "remark";
 import html from "remark-html";
-import Link from "next/link";
+import { projectList } from "../../data/projects";
 import { ImageModal } from "../../components/ImageModal";
+import { PageShell } from "../../components/PageShell";
 
 export async function getStaticPaths() {
   return {
-    paths: Object.values(projects).map(page => ({ params: { projectid: page.id } })),
-    fallback: false, // can also be true or 'blocking'
+    paths: projectList.map(p => ({ params: { projectid: p.id } })),
+    fallback: false,
   };
 }
 
-export const getStaticProps: GetStaticProps = async context => {
-  const { params } = context;
-  const projectid = params?.projectid;
-  const page = Object.values(projects).find(page => page.id == (projectid as string));
-  const processedContent = await remark()
-    .use(html)
-    .process(page?.description || "");
-  const contentHtml = processedContent.toString();
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const page = projectList.find(p => p.id === params?.projectid)!;
+  const processed = await remark().use(html).process(page.description);
   return {
     props: {
-      title: page?.title,
-      img: page?.img,
-      link: page?.link,
-      contentHtml,
-      zoomable: 'zoomable' in (page ?? {}) ? (page as any).zoomable || false : false,
-      largeImage: 'largeImage' in (page ?? {}) ? (page as any).largeImage || false : false,
+      title: page.title,
+      subheading: page.subheading,
+      img: page.img,
+      link: page.link,
+      contentHtml: processed.toString(),
+      zoomable: page.zoomable ?? false,
+      largeImage: page.largeImage ?? false,
     },
   };
 };
 
-const ProjectDetail: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ title, link, img, contentHtml, zoomable, largeImage }) => {
-  const router = useRouter();
-  useEffect(() => {
-    // scroll to top on load
-    if (window != undefined) window.scrollTo(0, 0);
-  }, []);
-
-  if (!contentHtml) {
-    // TODO: Return 404 page
-    return null;
-  }
-
+export default function ProjectDetail({
+  title,
+  subheading,
+  link,
+  img,
+  contentHtml,
+  zoomable,
+  largeImage,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  const size = largeImage ? 640 : 320;
   return (
-    <div className="flex flex-col min-h-screen w-full sm:w-[75vw] sm:min-w-[75vw] p-10">
-      {/* <div className="sticky top-10"> */}
-      <MotionConfig>
-        <motion.div
-          className="flex justify-between mb-8"
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.2,
-          }}
-        >
-          <button
-            role={"button"}
-            onClick={() => router.back()}
-            className="inline-flex items-center rounded-md border border-gray-300 bg-white pl-3 pr-4 py-2 text-sm font-medium text-gray-700 hover:text-white hover:bg-purple-600 hover:border-purple-600 focus:border-purple-200 focus:outline-0 focus:ring-2 focus:ring-purple-300 group"
-          >
-            <ArrowLeft size={20} className="w-5 h-5 mr-2 text-gray-600 group-hover:text-purple-200" />
-            Back
-          </button>
-          {/* <a
-              href={page.link}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center px-2.5 py-1.5 rounded-md hover:bg-gray-100 text-gray-500 hover:text-purple-600 text-sm tracking-tight font-medium focus:outline-0 focus:ring-2 focus:ring-purple-400 group"
-            >
-              View Source
-              <ArrowUpRightIcon className="w-4 h-4 text-gray-400 ml-2 group-hover:text-purple-400" />
-            </a> */}
-        </motion.div>
-        <div className="flex flex-col w-full sm:w-[75vw] sm:min-w-[75vw] gap-10">
-          <motion.h2
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{
-              delay: 0.4,
-            }}
-            className="text-4xl font-bold tracking-tight"
-          >
-            {title}
-          </motion.h2>
-          {zoomable ? (
-            <div className="self-center">
-              <ImageModal
-                src={img}
-                alt={title}
-                width={largeImage ? 600 : 300}
-                height={largeImage ? 600 : 300}
-                className="flex mt-4"
-              />
-            </div>
-          ) : (
-            <Link href={link} className={`self-center ${link == "" && "pointer-events-none"}`} target="_blank">
-              <Image
-                src={img}
-                alt={title}
-                //   placeholder="blur"
-                //   blurDataURL={page.placeholder}
-                width={largeImage ? 600 : 300}
-                height={largeImage ? 600 : 300}
-                style={{
-                  objectFit: "contain",
-                }}
-                className="rounded-lg flex mt-4 bg-purple-500/30 shadow-2xl p-4"
-              />
-            </Link>
-          )}
-
-          <motion.div
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{
-              delay: 0.5,
-            }}
-            className="mt-5 text-md space-y-5 *:w-full *:text-pretty *:whitespace-pre-line *:leading-relaxed *:box-border *:px-5"
-            dangerouslySetInnerHTML={{ __html: contentHtml }}
-          ></motion.div>
-          {link != "" ? (
-            <motion.h2
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{
-                delay: 0.5,
-              }}
-              className="text-lg self-center"
-            >
-              You can check out the project{" "}
-              <Link href={link} className="font-semibold underline" target="_blank">
-                here
-              </Link>
-            </motion.h2>
-          ) : null}
-        </div>
-      </MotionConfig>
-      {/* </div> */}
-    </div>
+    <PageShell title={title} lede={subheading} backHref="/projects" backLabel="projects">
+      <div className="dk-figure dk-rise" style={{ ["--i" as string]: 3 }}>
+        {zoomable ? (
+          <ImageModal src={img} alt={title} width={size} height={size} className="flex" />
+        ) : (
+          <Image src={img} alt={title} width={size} height={size} style={{ objectFit: "contain" }} />
+        )}
+      </div>
+      <div className="dk-prose dk-rise" style={{ ["--i" as string]: 4 }} dangerouslySetInnerHTML={{ __html: contentHtml }} />
+      {link ? (
+        <a href={link} target="_blank" rel="noopener noreferrer" className="dk-cta">
+          Open {title} <span aria-hidden="true">↗</span>
+        </a>
+      ) : null}
+    </PageShell>
   );
-};
-
-export default ProjectDetail;
+}

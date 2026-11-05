@@ -133,6 +133,12 @@ export const projects = {
   },
 };
 
+/**
+ * To add a project: add an entry to `projects` above. The key can be anything;
+ * `id` becomes the URL (/projects/<id>) and `to` should be "/projects/<id>".
+ * Put the image in public/assets (or use a full URL) and set `img`.
+ * `description` is Markdown. Order here is the order on the Projects page.
+ */
 export type PROJECT_TYPE = {
   id: string;
   to: string;
@@ -144,3 +150,5 @@ export type PROJECT_TYPE = {
   zoomable?: boolean;
   largeImage?: boolean;
 };
+
+export const projectList: PROJECT_TYPE[] = Object.values(projects);

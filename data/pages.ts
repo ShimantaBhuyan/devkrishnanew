@@ -5,9 +5,9 @@ export const pages = {
     img: "/assets/work-image.png",
     superImg: "https://ik.imagekit.io/colorContrast/devkrishna-super-images/work-image_pznSct7btH.png",
     placeholder: "/assets/blurred/work-image.png",
-    title: "Professional Experience",
+    title: "Work",
     description:
-      "I have had the opportunity to work in different domains and at various stages of an organisation, right from an MNC to being the Employee #1 at a startup",
+      "From an enterprise MNC to founding engineer at two startups. I like being close to the product, the customer and the production pager.",
     //   date: "Published on May 19, 2018",
     width: "512",
     height: "768",
@@ -22,7 +22,8 @@ export const pages = {
     superImg: "https://ik.imagekit.io/colorContrast/devkrishna-super-images/think-image_dHm1PHudO.png",
     placeholder: "/assets/blurred/think-image.png",
     title: "Skills",
-    description: "These are the skills I have developed over the years.",
+    description:
+      "What I reach for, from the database to the pixels. I've been building with LLMs and diffusion models since before ChatGPT was a thing.",
     //   date: "Published on May 19, 2018",
     width: "512",
     height: "768",
@@ -75,8 +76,8 @@ export const pages = {
     img: "/assets/contact-image.png",
     superImg: "https://ik.imagekit.io/colorContrast/devkrishna-super-images/contact-image_CkCSY0m80V.png",
     placeholder: "/assets/blurred/contact-image.png",
-    title: "Contact me",
-    description: "I am active on these social media platforms. Contact me for brainstorming, collab, or anything else.",
+    title: "Say hello",
+    description: "For brainstorming, collaborations, or anything else. DMs and email both work.",
     meta: {
       socials: {
         twitter: "https://twitter.com/AllDevThings",

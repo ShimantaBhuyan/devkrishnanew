@@ -1,20 +1,9 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 // import Navbar from "./Navbar";
 import Head from "next/head";
-import { Footer } from "./Footer";
-import { Inter } from "next/font/google";
 // import styles from "../styles/Home.module.css";
 
-// If loading a variable font, you don't need to specify the font weight
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
-
-import localFont from "next/font/local";
-
-// Font files can be colocated inside of `pages`
-const akkuratFont = localFont({ src: "../public/assets/AkkuratFont.woff2" });
+import { akkurat } from "../lib/fonts";
 
 const ThemeContext = createContext<{
   theme: "dark" | "light";
@@ -27,7 +16,7 @@ const ThemeContext = createContext<{
 export const useTheme = () => useContext(ThemeContext);
 
 export default function Layout({ children }: { children: React.ReactElement }) {
-  const [theme, setTheme] = useState<"dark" | "light">("light");
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   // On mount, sync theme state with DOM/system preference
   useEffect(() => {
@@ -82,21 +71,13 @@ export default function Layout({ children }: { children: React.ReactElement }) {
           <meta name="og:image:height" content="185" />
 
           <link rel="icon" href="/assets/icon.ico" />
-          {/* <link rel="stylesheet" href="https://rsms.me/inter/inter.css" crossOrigin="anonymous" /> */}
-          <link
-            href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap"
-            rel="stylesheet"
-            crossOrigin="anonymous"
-          />
         </Head>
         {/* Theme Toggler Button */}
         <button
-          aria-pressed={theme === "light"}
-          className={`theme-toggle fixed top-4 right-4 z-50 rounded-xl border-none p-2 bg-transparent cursor-pointer transition-all duration-500 ${
-            theme === "light" ? "text-[#4D4D4D]" : "text-white"
-          }`}
+                    className="theme-toggle"
           onClick={toggleTheme}
           title="Toggle theme"
+          aria-label={theme === "light" ? "Switch to dark theme" : "Switch to light theme"}
         >
           <svg
             aria-hidden="true"
@@ -104,8 +85,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
-            stroke={theme === "light" ? "#4D4D4D" : "white"}
-            style={{ width: 28, height: 28 }}
+            stroke="currentColor"
           >
             <path
               strokeLinecap="round"
@@ -124,7 +104,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
         </button>
         {/* <Navbar /> */}
         <main
-          className={`flex flex-col justify-center items-center box-border overflow-x-clip ${akkuratFont.className}`}
+          className={`w-full box-border overflow-x-clip ${akkurat.className}`}
         >
           {children}
         </main>

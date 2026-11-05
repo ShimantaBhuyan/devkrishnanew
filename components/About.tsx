@@ -19,7 +19,7 @@ export const About = () => {
           className="rounded-lg"
         />
       </div>
-      <h2 className="text-lg text-black font-semibold">
+      <h2 className="text-lg font-semibold">
         Currently building with LLMs and Diffusion Models, a glimpse of which is my avatar picture above.
       </h2>
       {/* </div> */}

@@ -1,227 +1,131 @@
-"use client";
-
-import type React from "react";
-
-// import { useState, useEffect } from "react";
-
-import localFont from "next/font/local";
-import Image from "next/image";
+import Head from "next/head";
 import Link from "next/link";
-import { WordScrambler } from "../components/WordScrambler";
-import LinePortrait from "../components/LinePortrait";
+import { useRouter } from "next/router";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { ParticlePortrait, type ParticlePortraitHandle } from "../components/ParticlePortrait";
 import { useTheme } from "../components/Layout";
+import { nav, profile } from "../data/site";
 
-const akkuratFont = localFont({ src: "../public/assets/AkkuratFont.woff2" });
+const GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/<>@#";
+
+function useScrambler(lines: string[], interval = 3600) {
+  const [text, setText] = useState(lines[0]);
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      let i = 0;
+      const id = setInterval(() => setText(lines[(i = (i + 1) % lines.length)]), interval);
+      return () => clearInterval(id);
+    }
+    let i = 0,
+      tick: ReturnType<typeof setInterval> | undefined;
+    const id = setInterval(() => {
+      const next = lines[(i = (i + 1) % lines.length)];
+      let f = 0;
+      clearInterval(tick);
+      tick = setInterval(() => {
+        f++;
+        let out = "";
+        for (let c = 0; c < next.length; c++)
+          out += c < f / 2 ? next[c] : next[c] === " " ? " " : GLYPHS[(Math.random() * GLYPHS.length) | 0];
+        setText(out);
+        if (f / 2 >= next.length) clearInterval(tick);
+      }, 28);
+    }, interval);
+    return () => {
+      clearInterval(id);
+      clearInterval(tick);
+    };
+  }, [lines, interval]);
+  return text;
+}
 
 export default function HomePage() {
   const { theme } = useTheme();
-  // const [isMobile, setIsMobile] = useState(false);
+  const router = useRouter();
+  const portrait = useRef<ParticlePortraitHandle>(null);
+  const role = useScrambler(profile.roles);
+  const [leaving, setLeaving] = useState(false);
 
-  // useEffect(() => {
-  //   setIsMobile(window.innerWidth <= 768);
-  // }, []);
-
-  const getSectionImg = (section: string) => {
-    if (theme === "light") {
-      switch (section) {
-        case "professional":
-          return "/assets/landing_page_cards_light/ProfessionalSection.svg";
-        case "skills":
-          return "/assets/landing_page_cards_light/SkillsSection.svg";
-        case "about":
-          return "/assets/landing_page_cards_light/AboutSection.svg";
-        case "contact":
-          return "/assets/landing_page_cards_light/ContactSection.svg";
-        default:
-          return "";
-      }
-    }
-
-    switch (section) {
-      case "professional":
-        return "/assets/landing_page_cards_dark_colored/ProfessionalSection.svg";
-      case "skills":
-        return "/assets/landing_page_cards_dark_colored/SkillsSection.svg";
-      case "about":
-        return "/assets/landing_page_cards_dark_colored/AboutSection.svg";
-      case "contact":
-        return "/assets/landing_page_cards_dark_colored/ContactSection.svg";
-      default:
-        return "";
-    }
+  const go = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return void router.push(href);
+    setLeaving(true);
+    portrait.current?.explode();
+    setTimeout(() => router.push(href), 650);
   };
 
   return (
-    <div
-      className={`min-h-screen w-screen p-6 md:p-12 transition-all duration-500 ${akkuratFont.className} ${theme === "light" ? "bg-[#ebebeb] text-[#4D4D4D]" : "bg-[#0e0e12] text-white"
+    <>
+      <Head>
+        <title>Shimanta Bhuyan — devkrishna</title>
+      </Head>
+      <ParticlePortrait ref={portrait} theme={theme} />
+      <div
+        className={`relative z-10 w-screen min-h-svh grid grid-rows-[auto_1fr_auto] gap-8 p-5 md:p-14 pointer-events-none transition-[opacity,filter] duration-500 ${
+          leaving ? "opacity-0 blur-sm" : ""
         }`}
-    >
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div
-          className={`mb-6 pt-8 md:p-0 rounded-lg group border-none transition-all duration-500 ${theme == "light" ? "border-[#B7B7B7] bg-[#ebebeb]" : "border-[#2260ee] bg-[#0e0e12]"
-            }`}
-        >
-          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 md:gap-8">
-            <div className="flex flex-col items-start min-w-0 flex-1">
-              <h1
-                className={`text-3xl md:text-6xl font-bold tracking-tighter transition-all duration-500 ${theme === "light" ? "text-[#4D4D4D]" : "text-[#9ed7ea]"
-                  }`}
-              >
-                Hello World, this is Shimanta
-              </h1>
+      >
+        <header className="flex justify-between items-baseline text-[13px] text-[var(--muted)] pr-12">
+          <span>
+            <b className="text-[var(--ink)]">devkrishna</b> / {profile.fullName}
+          </span>
+        </header>
 
-              <div className="min-w-0 w-full">
-                <WordScrambler
-                  words={[
-                    "SERIAL PRODUCT BUILDER",
-                    "SENIOR FULLSTACK ENGINEER @ SPRINTO",
-                    "EX-FOUNDING ENGINEER @ TUNNEL",
-                  ]}
-                  theme={theme}
-                />
-              </div>
-            </div>
-
-            {/* Desktop: no viewBox = natural coordinate crop showing the face */}
-            <LinePortrait
-              className={`hidden md:block w-[500px] h-[500px] flex-shrink-0 transition-all rounded-xl duration-500 ${theme === "light" ? "text-[#4D4D4D]" : "text-[#9ed7ea]"
-                }`}
-              aria-label="line portrait image"
-              alt="line portrait of Shimanta"
-            />
-            {/* Mobile: viewBox scales the full portrait to fit */}
-            <LinePortrait
-              viewBox="0 0 1100 1000"
-              preserveAspectRatio="xMidYMid meet"
-              className={`block md:hidden w-full max-w-[280px] aspect-square flex-shrink-0 mx-auto transition-all rounded-xl duration-500 ${theme === "light" ? "text-[#4D4D4D]" : "text-[#9ed7ea]"
-                }`}
-              aria-label="line portrait image"
-              alt="line portrait of Shimanta"
-            />
-          </div>
-        </div>
-
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Professional Section */}
-          <Link href="/space/work">
-            <div
-              className={`relative rounded-lg pb-4 transition-all duration-300 cursor-pointer hover:transition-shadow ${theme === "light"
-                ? "border-2 border-[#B7B7B7] bg-[#ebebeb] hover:shadow-2xl"
-                : "border-2 border-[#2260ee] bg-transparent hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]"
-                }`}
-            >
-              <Image
-                src={getSectionImg("professional")}
-                alt="professional section abstract image"
-                width={516}
-                height={276}
-                className={`object-cover w-full h-full max-h-[312px] scale-90 mb-2`}
-              />
-              <h2
-                className={`absolute bottom-2 md:bottom-6 left-6 md:text-2xl font-bold mt-6 tracking-tight transition-all duration-500 ${theme === "light" ? "text-[#4D4D4D]" : "text-[#9ed7ea]"
-                  }`}
-              >
-                PROFESSIONAL
-              </h2>
-            </div>
-          </Link>
-
-          {/* Skills Section */}
-          <Link href="/space/skills">
-            <div
-              className={`relative rounded-lg pb-4 transition-all duration-300 cursor-pointer hover:transition-shadow ${theme === "light"
-                ? "border-2 border-[#B7B7B7] bg-[#ebebeb] hover:shadow-2xl"
-                : "border-2 border-[#2260ee] bg-transparent hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]"
-                }`}
-            >
-              <Image
-                src={getSectionImg("skills")}
-                alt="skills section abstract image"
-                width={516}
-                height={276}
-                className={`object-cover w-full h-full max-h-[312px] scale-90 mb-2`}
-              />
-              <h2
-                className={`absolute bottom-2 md:bottom-6 left-6 md:text-2xl font-bold mt-6 tracking-tight transition-all duration-500 ${theme === "light" ? "text-[#4D4D4D]" : "text-[#9ed7ea]"
-                  }`}
-              >
-                SKILLS
-              </h2>
-            </div>
-          </Link>
-
-          {/* Projects Section */}
-          <Link href="/projects">
-            <div
-              className={`relative rounded-lg pb-4 transition-all duration-300 cursor-pointer hover:transition-shadow ${theme === "light"
-                ? "border-2 border-[#B7B7B7] bg-[#ebebeb] hover:shadow-2xl"
-                : "border-2 border-[#2260ee] bg-transparent hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]"
-                }`}
-            >
-              <Image
-                src={getSectionImg("about")}
-                alt="projects section abstract image"
-                width={516}
-                height={276}
-                className={`object-cover w-full h-full max-h-[312px] scale-90 mb-2`}
-              />
-              <h2
-                className={`absolute bottom-2 md:bottom-6 left-6 md:text-2xl font-bold mt-6 tracking-tight transition-all duration-500 ${theme === "light" ? "text-[#4D4D4D]" : "text-[#9ed7ea]"
-                  }`}
-              >
-                PROJECTS
-              </h2>
-            </div>
-          </Link>
-
-          {/* Contact Section */}
-          <Link href="/space/contact">
-            <div
-              className={`relative rounded-lg pb-4 transition-all duration-300 cursor-pointer hover:transition-shadow ${theme === "light"
-                ? "border-2 border-[#B7B7B7] bg-[#ebebeb] hover:shadow-2xl"
-                : "border-2 border-[#2260ee] bg-transparent hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]"
-                }`}
-            >
-              <Image
-                src={getSectionImg("contact")}
-                alt="contact section abstract image"
-                width={516}
-                height={276}
-                className={`object-cover w-full h-full max-h-[312px] scale-90 mb-2`}
-              />
-              <h2
-                className={`absolute bottom-2 md:bottom-6 left-6 md:text-2xl font-bold mt-6 tracking-tight transition-all duration-500 ${theme === "light" ? "text-[#4D4D4D]" : "text-[#9ed7ea]"
-                  }`}
-              >
-                CONTACT ME
-              </h2>
-            </div>
-          </Link>
-        </div>
-
-        {/* Footer */}
-        <div
-          className={`mt-8 text-center text-xs flex flex-col gap-4 tracking-tighter transition-all duration-500 ${theme === "light" ? "text-[#888]" : "text-[#aaa]"
-            }`}
-        >
-          <p className="text-sm">
-            © 2023 - {new Date().getFullYear()} |{" "}
-            <a className="underline" href="https://x.com/AllDevThings" target="_blank" rel="noopener noreferrer">
-              SHIMANTA
-            </a>
-            {/* {" "}
-            - BUILT WITH PRECISION */}
+        <section className="self-end md:self-center w-full md:max-w-[min(46vw,640px)] pt-[52vh] md:pt-0">
+          <h1
+            className="dk-rise font-bold text-[clamp(2.6rem,6.2vw,5.8rem)] leading-[0.92] tracking-[-0.04em] [text-wrap:balance]"
+            style={{ ["--i" as string]: 0 }}
+          >
+            Hello world,
+            <br />
+            this is <span className="text-[var(--accent)]">{profile.name}</span>.
+          </h1>
+          <p
+            className="dk-rise mt-5 text-[clamp(14px,1.3vw,17px)] text-[var(--muted)] min-h-[1.5em]"
+            style={{ ["--i" as string]: 1 }}
+          >
+            <span className="text-[var(--ink)]" aria-hidden="true">
+              {role}
+            </span>
+            <span className="sr-only">{profile.roles.join(". ")}</span>
           </p>
-          <p>
-            Illustrations by{" "}
-            <a href="https://twitter.com/crlhsr" target="_blank" rel="noopener noreferrer">
-              @crlhsr
+
+          <nav className="mt-[clamp(28px,6vh,64px)] flex flex-col" aria-label="Sections">
+            {nav.map((item, i) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={e => go(e, item.href)}
+                onMouseEnter={() => portrait.current?.morph(item.shape)}
+                onMouseLeave={() => portrait.current?.morph(null)}
+                onFocus={() => portrait.current?.morph(item.shape)}
+                onBlur={() => portrait.current?.morph(null)}
+                className="dk-rise pointer-events-auto grid grid-cols-[1fr_auto] items-baseline gap-6 py-3 border-t last:border-b border-[var(--line)] text-[clamp(20px,2.2vw,30px)] font-bold tracking-[-0.02em] text-[var(--ink)] no-underline transition-[color,padding] duration-500 ease-[cubic-bezier(.16,1,.3,1)] hover:text-[var(--accent)] hover:pl-3.5 focus-visible:text-[var(--accent)] focus-visible:pl-3.5 focus-visible:outline-none"
+                style={{ ["--i" as string]: i + 2 }}
+              >
+                {item.label}
+                <small className="text-[13px] font-normal tracking-normal text-[var(--muted)]">{item.note}</small>
+              </Link>
+            ))}
+          </nav>
+        </section>
+
+        <footer className="flex justify-between gap-4 text-xs text-[var(--muted)]">
+          <span className="hidden md:inline">Move your cursor through me. Hover a section.</span>
+          <span>
+            © 2023 – {new Date().getFullYear()} ·{" "}
+            <a
+              className="pointer-events-auto underline underline-offset-2"
+              href="https://x.com/AllDevThings"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Shimanta
             </a>
-          </p>
-        </div>
+          </span>
+        </footer>
       </div>
-    </div>
+    </>
   );
 }
