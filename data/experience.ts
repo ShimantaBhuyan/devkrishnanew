@@ -35,11 +35,10 @@ export const experience: Experience[] = [
     start: "August 2026",
     shape: "ORIGINAL\nPICTURES",
     summary:
-      "Original Pictures builds trustworthy-media (C2PA) and AI products. I'm the main engineer on Deutschtec AI, a multi-LLM assistant and media-generation app on iOS, Android and web. I took it from a single-tenant consumer app to a multi-tenant B2B and white-label platform in production, and built the team's internal AI-agent platform alongside it.",
+      "Original Pictures builds trustworthy-media (C2PA) and AI products. I'm the main engineer on the company's flagship product, a multi-LLM assistant and media-generation app on iOS, Android and web. I took it from a single-tenant consumer app to a multi-tenant B2B and white-label platform in production, and built the team's internal AI-agent platform alongside it.",
     groups: [
       {
-        title: "Deutschtec AI: from consumer app to white-label platform",
-        link: "https://deutschtec.ai",
+        title: "Flagship AI assistant: from consumer app to white-label platform",
         items: [
           "Wrote 58% of merged PRs (275 of 471) on the company's main product, more than any other contributor, and owned weekly releases, hotfixes, OTA updates and incident response.",
           "Designed and built the move to a multi-tenant B2B and white-label platform, phase by phase behind feature flags. It shipped to production in about six weeks, with no downtime for existing users.",
@@ -58,7 +57,7 @@ export const experience: Experience[] = [
           "Artifact generation for websites and documents, with streaming code previews and follow-ups that finish apps cut off by token limits.",
           "Multi-phase deep research with citations, model choice per phase and fallback between model families.",
           "A multi-intent router that runs chained requests (\"search the web, then make an infographic\") as an ordered plan with per-step credit settlement, and a unified capability router across 23 task types, backed by an eval.",
-          "Migrated generative UI from Tambo Cloud to the in-house LLM gateway before Tambo's shutdown, with no downtime.",
+          "Migrated generative UI off a third-party service to the in-house LLM gateway before that service shut down, with no downtime.",
         ],
       },
       {
@@ -78,17 +77,16 @@ export const experience: Experience[] = [
         ],
       },
       {
-        title: "OP Party: the team's AI-agent platform",
+        title: "Internal AI-agent platform for the team",
         items: [
           "Sole author. Each teammate runs their own agent in an isolated Cloudflare container that sleeps when idle and wakes on demand, built on Workers, Durable Objects, R2 and D1.",
           "Shared team tools are connected once by an admin and brokered per tool, so credentials never reach a workspace. Launched to the team in November 2026.",
         ],
       },
       {
-        title: "WhiteLabel AI",
-        link: "https://whitelabelai.io",
+        title: "White-label marketing site",
         items: [
-          "Named, built and launched whitelabelai.io on Next.js 16 and Payload CMS 3, with a static export to S3 and CloudFront that redeploys when the CMS publishes.",
+          "Named, built and launched the marketing site for the white-label offering on Next.js 16 and Payload CMS 3, with a static export to S3 and CloudFront that redeploys when the CMS publishes.",
           "A live \"your brand\" playground with WCAG contrast checks and RTL support, plus a serverless demo-request backend (Lambda, DynamoDB, SES).",
         ],
       },
