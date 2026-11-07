@@ -35,3 +35,13 @@ export const socials = [
   { label: "Email", handle: "shimantakb@gmail.com", href: "mailto:shimantakb@gmail.com" },
   { label: "Pinterest", handle: "shimantabhuyan", href: "https://in.pinterest.com/shimantabhuyan/" },
 ];
+
+/** Site-wide share metadata (search results, link previews). public/og.png is the share card. */
+export const siteMeta = {
+  url: "https://www.devkrishna.in",
+  title: "Shimanta Bhuyan — devkrishna",
+  description: `${profile.fullName}, ${currentRole.role} at ${currentRole.company} and serial product builder. Work, weekend projects, skills and how to say hi.`,
+  image: "https://www.devkrishna.in/og.png",
+  imageAlt: "Hello world, this is Shimanta. A particle portrait beside the devkrishna homepage headline.",
+  twitter: "@AllDevThings",
+};

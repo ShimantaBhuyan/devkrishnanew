@@ -15,7 +15,9 @@ export function PageShell({ title, lede, backHref = "/", backLabel = "devkrishna
   return (
     <div className="dk-page">
       <Head>
-        <title>{`${title} — devkrishna`}</title>
+        <title key="title">{`${title} — devkrishna`}</title>
+        <meta key="og:title" property="og:title" content={`${title} — devkrishna`} />
+        <meta key="twitter:title" name="twitter:title" content={`${title} — devkrishna`} />
       </Head>
       <Link href={backHref} className="dk-back dk-rise">
         <span aria-hidden="true">←</span> <b>{backLabel}</b>

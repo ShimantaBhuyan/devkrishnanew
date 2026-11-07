@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
@@ -57,9 +56,6 @@ export default function HomePage() {
 
   return (
     <>
-      <Head>
-        <title>Shimanta Bhuyan — devkrishna</title>
-      </Head>
       <ParticlePortrait ref={portrait} theme={theme} />
       <div
         className={`relative z-10 w-screen min-h-svh grid grid-rows-[auto_1fr_auto] gap-8 p-5 md:p-14 pointer-events-none transition-[opacity,filter] duration-500 ${

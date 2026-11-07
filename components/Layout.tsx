@@ -1,9 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 // import Navbar from "./Navbar";
 import Head from "next/head";
+import { useRouter } from "next/router";
 // import styles from "../styles/Home.module.css";
 
 import { akkurat } from "../lib/fonts";
+import { siteMeta } from "../data/site";
 
 const ThemeContext = createContext<{
   theme: "dark" | "light";
@@ -17,6 +19,8 @@ export const useTheme = () => useContext(ThemeContext);
 
 export default function Layout({ children }: { children: React.ReactElement }) {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const { asPath } = useRouter();
+  const pageUrl = siteMeta.url + (asPath.split(/[?#]/)[0] === "/" ? "/" : asPath.split(/[?#]/)[0]);
 
   // On mount, sync theme state with DOM/system preference
   useEffect(() => {
@@ -49,26 +53,29 @@ export default function Layout({ children }: { children: React.ReactElement }) {
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div className="flex flex-col items-center min-h-screen max-w-[100%]">
         <Head>
-          <title>DevKrishna | Personal Website</title>
-          <meta name="description" content="Personal Website of Shimanta Krishna Bhuyan" />
-          <meta name="og:url" content="https://devkrishna.in" />
-          <meta name="og:type" content="website" />
-          <meta name="og:title" content="DevKrishna | Personal Website" />
-          <meta name="og:description" content="Personal Website of Shimanta Krishna Bhuyan" />
-          <meta name="og:image" content="https://ik.imagekit.io/colorContrast/devkrishna_0PCwodeWS.png" />
-          <meta name="og:image:type" content="image/png" />
-          <meta name="og:image:width" content="378" />
-          <meta name="og:image:height" content="185" />
+          <title key="title">{siteMeta.title}</title>
+          <meta key="description" name="description" content={siteMeta.description} />
+          <meta name="theme-color" content="#0b0d12" />
+          <link rel="canonical" href={pageUrl} />
+
+          <meta property="og:site_name" content="devkrishna" />
+          <meta property="og:url" content={pageUrl} />
+          <meta property="og:type" content="website" />
+          <meta key="og:title" property="og:title" content={siteMeta.title} />
+          <meta key="og:description" property="og:description" content={siteMeta.description} />
+          <meta property="og:image" content={siteMeta.image} />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:image:alt" content={siteMeta.imageAlt} />
 
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:domain" content="devkrishna.in" />
-          <meta name="twitter:url" content="https://devkrishna.in" />
-          <meta name="twitter:title" content="DevKrishna | Personal Website" />
-          <meta name="twitter:description" content="Personal Website of Shimanta Krishna Bhuyan" />
-          <meta name="twitter:image" content="https://ik.imagekit.io/colorContrast/devkrishna_0PCwodeWS.png" />
-          <meta name="og:image:type" content="image/png" />
-          <meta name="og:image:width" content="378" />
-          <meta name="og:image:height" content="185" />
+          <meta name="twitter:site" content={siteMeta.twitter} />
+          <meta name="twitter:creator" content={siteMeta.twitter} />
+          <meta key="twitter:title" name="twitter:title" content={siteMeta.title} />
+          <meta key="twitter:description" name="twitter:description" content={siteMeta.description} />
+          <meta name="twitter:image" content={siteMeta.image} />
+          <meta name="twitter:image:alt" content={siteMeta.imageAlt} />
 
           <link rel="icon" href="/assets/icon.ico" />
         </Head>
